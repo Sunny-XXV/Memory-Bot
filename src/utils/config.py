@@ -54,6 +54,10 @@ class BotConfig(BaseSettings):
     enable_logging: bool = Field(True, description="Enable detailed logging")
     log_level: str = Field("DEBUG", description="Logging level")
 
+    # AI Model settings
+    llm_model: str = Field("Qwen/Qwen3-30B-A3B-Instruct-2507-FP8", description="LLM model name")
+    asr_model: str = Field("mistralai/Voxtral-Mini-3B-2507", description="ASR model name")
+
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8", "extra": "ignore"}
 
     @property

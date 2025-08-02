@@ -3,8 +3,16 @@ from typing import Optional
 
 from loguru import logger
 from telegram import BotCommand, Update
-from telegram.ext import Application, ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import (
+    Application,
+    ApplicationBuilder,
+    CommandHandler,
+    ContextTypes,
+    MessageHandler,
+    filters,
+)
 
+from src.components.ai_services import AIServices
 from src.components.cmd_handlers import BotCommandHandler
 from src.components.memory_client import MemoryAPIClient
 from src.components.minio_client import MinIOClient
@@ -16,6 +24,7 @@ class MemoryBot:
         self._config = config
         self._memory_client: Optional[MemoryAPIClient] = None
         self._minio_client: Optional[MinIOClient] = None
+        self._ai_services: Optional[AIServices] = None
         self._command_handler: Optional[BotCommandHandler] = None
         self._application: Optional[Application] = None
 
@@ -25,7 +34,12 @@ class MemoryBot:
         self._minio_client = MinIOClient(self._config.minio)
         await self._minio_client.initialize()
 
-        self._command_handler = BotCommandHandler(self._memory_client, self._minio_client)
+        self._ai_services = AIServices(self._config)
+        # Initialize AI services (will be done lazily on first use)
+
+        self._command_handler = BotCommandHandler(
+            self._memory_client, self._minio_client, self._ai_services
+        )
         self._application = ApplicationBuilder().token(self._config.telegram_bot_token).build()
 
         if self._command_handler and self._application:
@@ -66,6 +80,9 @@ class MemoryBot:
         if self._memory_client:
             await self._memory_client.close()
 
+        if self._ai_services:
+            await self._ai_services.cleanup()
+
         logger.info("Memory bot stopped")
 
     async def _register_handlers(self) -> None:
@@ -86,6 +103,18 @@ class MemoryBot:
         # Help and start commands
         self._application.add_handler(CommandHandler("start", self._handle_start))
         self._application.add_handler(CommandHandler("help", self._handle_help))
+
+        # Mention handler - responds to messages mentioning the bot
+        if self._config.bot_username:
+            mention_filter = filters.TEXT & filters.Regex(f"@{self._config.bot_username}")
+            self._application.add_handler(
+                MessageHandler(mention_filter, self._command_handler.handle_mention)
+            )
+
+        # Voice message handler
+        self._application.add_handler(
+            MessageHandler(filters.VOICE, self._command_handler.handle_voice_message)
+        )
 
     async def _set_bot_commands(self) -> None:
         if not self._application:
@@ -114,6 +143,9 @@ class MemoryBot:
             "• `/query <search>` - Search your memories\n"
             "• `/get_item <id>` - Get specific memory item\n"
             "• `/help` - Show detailed help\n\n"
+            "**AI Features:**\n"
+            "• Mention me (@bot) for AI chat responses\n"
+            "• Send voice messages for automatic transcription\n\n"
             "Ready to start building your digital memory!"
         )
 
@@ -140,10 +172,14 @@ class MemoryBot:
             "Retrieve a specific memory item by its ID.\n"
             "• Use the ID from search results\n"
             "• Shows full item details and metadata\n\n"
+            "**🤖 AI Features:**\n"
+            "• **Mention Chat:** Mention me (@bot) in any message to get AI-powered responses\n"
+            "• **Voice Transcription:** Send voice messages for automatic transcription using advanced ASR\n\n"
             "**Tips:**\n"
             "• Memory items include metadata like timestamps and user info\n"
             "• Search works across all content types\n"
-            "• All data is processed securely through the Memory API"
+            "• All data is processed securely through the Memory API\n"
+            "• AI models are loaded on-demand to save resources"
         )
 
         await update.message.reply_text(help_text, parse_mode="Markdown")

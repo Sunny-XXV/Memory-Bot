@@ -1,3 +1,5 @@
+import os
+import tempfile
 from typing import Any, Callable, List, Optional, Tuple
 from uuid import UUID
 
@@ -6,15 +8,19 @@ from telegram import Message, Update
 from telegram.ext import ContextTypes
 from telegram.helpers import escape_markdown
 
+from src.components.ai_services import AIServices
 from src.components.memory_client import MemoryAPIClient, MemoryAPIError
 from src.components.minio_client import MinIOClient, MinIOClientError
 from src.utils.models import MemoryItemRaw, RetrievalResponse
 
 
 class BotCommandHandler:
-    def __init__(self, memory_client: MemoryAPIClient, minio_client: MinIOClient) -> None:
+    def __init__(
+        self, memory_client: MemoryAPIClient, minio_client: MinIOClient, ai_services: AIServices
+    ) -> None:
         self._memory_client = memory_client
         self._minio_client = minio_client
+        self._ai_services = ai_services
 
     async def handle_remember_cmd(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.message:
@@ -258,3 +264,90 @@ class BotCommandHandler:
 
     def set_bot_instance(self, bot):
         self._bot_instance = bot
+
+    async def handle_mention(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Handle messages where the bot is mentioned."""
+        if not update.message or not update.message.text:
+            return
+
+        try:
+            # Extract the message text without the mention
+            text = update.message.text
+            # Remove bot mention from the text
+            if context.bot.username:
+                mention = f"@{context.bot.username}"
+                text = text.replace(mention, "").strip()
+
+            if not text:
+                text = "Hello! How can I help you?"
+
+            # Generate AI response
+            logger.info(f"Generating response for mention: {text[:100]}...")
+            response = await self._ai_services.generate_chat_response(text)
+
+            # Reply to the original message
+            await update.message.reply_text(response, parse_mode="Markdown")
+
+        except Exception as e:
+            logger.error(f"Error handling mention: {e}")
+            await update.message.reply_text(
+                "Sorry, I encountered an error while processing your message. Please try again."
+            )
+
+    async def handle_voice_message(
+        self, update: Update, context: ContextTypes.DEFAULT_TYPE
+    ) -> None:
+        """Handle voice messages by transcribing them."""
+        if not update.message or not update.message.voice:
+            return
+
+        processing_message = None
+        temp_path = None
+
+        try:
+            # Send initial message to show processing
+            processing_message = await update.message.reply_text(
+                "🎤 Transcribing your voice message..."
+            )
+
+            # Download the voice file
+            voice_file = await update.message.voice.get_file()
+
+            # Create temporary file for the voice message
+            with tempfile.NamedTemporaryFile(suffix=".ogg", delete=False) as temp_file:
+                temp_path = temp_file.name
+                await voice_file.download_to_drive(temp_path)
+
+            # Transcribe the audio
+            logger.info("Starting voice transcription...")
+            transcription = await self._ai_services.transcribe_audio(temp_path)
+
+            if transcription:
+                # Edit the processing message with the transcription
+                await processing_message.edit_text(
+                    f"🎤 **Voice Transcription:**\n\n{transcription}", parse_mode="Markdown"
+                )
+            else:
+                await processing_message.edit_text(
+                    "❌ Sorry, I couldn't transcribe your voice message. Please try again."
+                )
+
+        except Exception as e:
+            logger.error(f"Error handling voice message: {e}")
+            error_message = (
+                "❌ Sorry, I encountered an error while transcribing your voice message."
+            )
+
+            if processing_message:
+                try:
+                    await processing_message.edit_text(error_message)
+                except Exception:
+                    # If editing fails, send a new message
+                    await update.message.reply_text(error_message)
+            else:
+                await update.message.reply_text(error_message)
+
+        finally:
+            # Clean up the temporary file
+            if temp_path and os.path.exists(temp_path):
+                os.unlink(temp_path)

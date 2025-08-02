@@ -3,8 +3,28 @@ revision = 2
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.14'",
-    "python_full_version >= '3.11' and python_full_version < '3.14'",
+    "python_full_version == '3.13.*'",
+    "python_full_version == '3.12.*'",
+    "python_full_version == '3.11.*'",
     "python_full_version < '3.11'",
+]
+
+[[package]]
+name = "accelerate"
+version = "1.9.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "numpy" },
+    { name = "packaging" },
+    { name = "psutil" },
+    { name = "pyyaml" },
+    { name = "safetensors" },
+    { name = "torch" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0e8/c61f81af7bf37/accelerate-1.9.0.tar.gz", hash = "sha256:0e8c61f81af7bf37195b6175a545ed292617dd90563c88f49020aea5b6a0b47f" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c24/739a97ade1d54/accelerate-1.9.0-py3-none-any.whl", hash = "sha256:c24739a97ade1d54af4549a65f8b6b046adc87e2b3e4d6c66516e32c53d5a8f1" },
 ]
 
 [[package]]
@@ -73,7 +93,9 @@ name = "argon2-cffi-bindings"
 version = "25.1.0"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
 resolution-markers = [
-    "python_full_version >= '3.11' and python_full_version < '3.14'",
+    "python_full_version == '3.13.*'",
+    "python_full_version == '3.12.*'",
+    "python_full_version == '3.11.*'",
     "python_full_version < '3.11'",
 ]
 dependencies = [
@@ -106,6 +128,64 @@ wheels = [
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5d5/88dec224e2a83/argon2_cffi_bindings-25.1.0-pp310-pypy310_pp73-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5d588dec224e2a83edbdc785a5e6f3c6cd736f46bfd4b441bbb5aa1f5085e584" },
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5ac/b4e41090d53f1/argon2_cffi_bindings-25.1.0-pp310-pypy310_pp73-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:5acb4e41090d53f17ca1110c3427f0a130f944b896fc8c83973219c97f57b690" },
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/da0/c79c23a63723a/argon2_cffi_bindings-25.1.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:da0c79c23a63723aa5d782250fbf51b768abca630285262fb5144ba5ae01e520" },
+]
+
+[[package]]
+name = "attrs"
+version = "25.3.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/75d/7cefc7fb57674/attrs-25.3.0.tar.gz", hash = "sha256:75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/427/318ce031701fe/attrs-25.3.0-py3-none-any.whl", hash = "sha256:427318ce031701fea540783410126f03899a97ffc6f61596ad581ac2e40e3bc3" },
+]
+
+[[package]]
+name = "audioop-lts"
+version = "0.2.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e81/268da0baa8804/audioop_lts-0.2.1.tar.gz", hash = "sha256:e81268da0baa880431b68b1308ab7257eb33f356e57a5f9b1f915dfb13dd1387" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fd1/345ae99e17e69/audioop_lts-0.2.1-cp313-abi3-macosx_10_13_universal2.whl", hash = "sha256:fd1345ae99e17e6910f47ce7d52673c6a1a70820d78b67de1b7abb3af29c426a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e17/5350da05d2087/audioop_lts-0.2.1-cp313-abi3-macosx_10_13_x86_64.whl", hash = "sha256:e175350da05d2087e12cea8e72a70a1a8b14a17e92ed2022952a4419689ede5e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4a8/dd6a81770f6ec/audioop_lts-0.2.1-cp313-abi3-macosx_11_0_arm64.whl", hash = "sha256:4a8dd6a81770f6ecf019c4b6d659e000dc26571b273953cef7cd1d5ce2ff3ae6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d1c/d3c0b6f2ca25c/audioop_lts-0.2.1-cp313-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d1cd3c0b6f2ca25c7d2b1c3adeecbe23e65689839ba73331ebc7d893fcda7ffe" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ff3/f97b3372c9778/audioop_lts-0.2.1-cp313-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:ff3f97b3372c97782e9c6d3d7fdbe83bce8f70de719605bd7ee1839cd1ab360a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a35/1af79edefc2a1/audioop_lts-0.2.1-cp313-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:a351af79edefc2a1bd2234bfd8b339935f389209943043913a919df4b0f13300" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2ae/b6f96f7f6da80/audioop_lts-0.2.1-cp313-abi3-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2aeb6f96f7f6da80354330470b9134d81b4cf544cdd1c549f2f45fe964d28059" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c58/9f06407e8340e/audioop_lts-0.2.1-cp313-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c589f06407e8340e81962575fcffbba1e92671879a221186c3d4662de9fe804e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fba/e5d6925d7c26e/audioop_lts-0.2.1-cp313-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:fbae5d6925d7c26e712f0beda5ed69ebb40e14212c185d129b8dfbfcc335eb48" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d2d/5434717f33117/audioop_lts-0.2.1-cp313-abi3-musllinux_1_2_i686.whl", hash = "sha256:d2d5434717f33117f29b5691fbdf142d36573d751716249a288fbb96ba26a281" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f62/6a01c0a186b08/audioop_lts-0.2.1-cp313-abi3-musllinux_1_2_ppc64le.whl", hash = "sha256:f626a01c0a186b08f7ff61431c01c055961ee28769591efa8800beadd27a2959" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/05d/a64e73837f88e/audioop_lts-0.2.1-cp313-abi3-musllinux_1_2_s390x.whl", hash = "sha256:05da64e73837f88ee5c6217d732d2584cf638003ac72df124740460531e95e47" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/56b/7a0a4dba8e353/audioop_lts-0.2.1-cp313-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:56b7a0a4dba8e353436f31a932f3045d108a67b5943b30f85a5563f4d8488d77" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6e8/99eb8874dc241/audioop_lts-0.2.1-cp313-abi3-win32.whl", hash = "sha256:6e899eb8874dc2413b11926b5fb3857ec0ab55222840e38016a6ba2ea9b7d5e3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/645/62c5c771fb0a8/audioop_lts-0.2.1-cp313-abi3-win_amd64.whl", hash = "sha256:64562c5c771fb0a8b6262829b9b4f37a7b886c01b4d3ecdbae1d629717db08b4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c45/317debeb64002/audioop_lts-0.2.1-cp313-abi3-win_arm64.whl", hash = "sha256:c45317debeb64002e980077642afbd977773a25fa3dfd7ed0c84dccfc1fafcb0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/382/7e3fce6fee4d6/audioop_lts-0.2.1-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:3827e3fce6fee4d69d96a3d00cd2ab07f3c0d844cb1e44e26f719b34a5b15455" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/161/249db9343b3c9/audioop_lts-0.2.1-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:161249db9343b3c9780ca92c0be0d1ccbfecdbccac6844f3d0d44b9c4a00a17f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5b7/b4ff9de7a44e0/audioop_lts-0.2.1-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:5b7b4ff9de7a44e0ad2618afdc2ac920b91f4a6d3509520ee65339d4acde5abf" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/72e/37f416adb43b0/audioop_lts-0.2.1-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:72e37f416adb43b0ced93419de0122b42753ee74e87070777b53c5d2241e7fab" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/534/ce808e6bab6ad/audioop_lts-0.2.1-cp313-cp313t-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:534ce808e6bab6adb65548723c8cbe189a3379245db89b9d555c4210b4aaa9b6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d2d/e9b6fb8b1cf9f/audioop_lts-0.2.1-cp313-cp313t-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:d2de9b6fb8b1cf9f03990b299a9112bfdf8b86b6987003ca9e8a6c4f56d39543" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f24/865991b5ed4b0/audioop_lts-0.2.1-cp313-cp313t-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f24865991b5ed4b038add5edbf424639d1358144f4e2a3e7a84bc6ba23e35074" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2bd/b3b7912ccd57e/audioop_lts-0.2.1-cp313-cp313t-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2bdb3b7912ccd57ea53197943f1bbc67262dcf29802c4a6df79ec1c715d45a78" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/120/678b208cca115/audioop_lts-0.2.1-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:120678b208cca1158f0a12d667af592e067f7a50df9adc4dc8f6ad8d065a93fb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/54c/d4520fc830b23/audioop_lts-0.2.1-cp313-cp313t-musllinux_1_2_i686.whl", hash = "sha256:54cd4520fc830b23c7d223693ed3e1b4d464997dd3abc7c15dce9a1f9bd76ab2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d6b/d20c7a10abcb0/audioop_lts-0.2.1-cp313-cp313t-musllinux_1_2_ppc64le.whl", hash = "sha256:d6bd20c7a10abcb0fb3d8aaa7508c0bf3d40dfad7515c572014da4b979d3310a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0e/d1ad9bd862539/audioop_lts-0.2.1-cp313-cp313t-musllinux_1_2_s390x.whl", hash = "sha256:f0ed1ad9bd862539ea875fb339ecb18fcc4148f8d9908f4502df28f94d23491a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e1a/f3ff32b8c38a7/audioop_lts-0.2.1-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:e1af3ff32b8c38a7d900382646e91f2fc515fd19dea37e9392275a5cbfdbff63" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f51/bb55122a89f7a/audioop_lts-0.2.1-cp313-cp313t-win32.whl", hash = "sha256:f51bb55122a89f7a0817d7ac2319744b4640b5b446c4c3efcea5764ea99ae509" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0f/2f336aa2aee2b/audioop_lts-0.2.1-cp313-cp313t-win_amd64.whl", hash = "sha256:f0f2f336aa2aee2bce0b0dcc32bbba9178995454c7b979cf6ce086a8801e14c7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/78b/fb3703388c780/audioop_lts-0.2.1-cp313-cp313t-win_arm64.whl", hash = "sha256:78bfb3703388c780edf900be66e07de5a3d4105ca8e8720c5c4d67927e0b15d0" },
+]
+
+[[package]]
+name = "audioread"
+version = "3.0.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ac5/460a5498c48bd/audioread-3.0.1.tar.gz", hash = "sha256:ac5460a5498c48bdf2e8e767402583a4dcd13f4414d286f42ce4379e8b35066d" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4cd/ce70b8adc0da0/audioread-3.0.1-py3-none-any.whl", hash = "sha256:4cdce70b8adc0da0a3c9e0d85fb10b3ace30fbdf8d1670fd443929b61d117c33" },
 ]
 
 [[package]]
@@ -245,6 +325,15 @@ wheels = [
 ]
 
 [[package]]
+name = "decorator"
+version = "5.2.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/65f/266143752f734/decorator-5.2.1.tar.gz", hash = "sha256:65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d31/6bb415a2d9e2d/decorator-5.2.1-py3-none-any.whl", hash = "sha256:d316bb415a2d9e2d2b3abcc4084c6502fc09240e292cd76a76afc106a1c8e04a" },
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.3.0"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
@@ -355,6 +444,121 @@ wheels = [
 ]
 
 [[package]]
+name = "jinja2"
+version = "3.1.6"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "markupsafe" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/013/7fb05990d35f1/jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/85e/ce4451f492d0c/jinja2-3.1.6-py3-none-any.whl", hash = "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67" },
+]
+
+[[package]]
+name = "joblib"
+version = "1.5.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f4f/86e351f39fe3d/joblib-1.5.1.tar.gz", hash = "sha256:f4f86e351f39fe3d0d32a9f2c3d8af1ee4cec285aafcb27003dda5205576b444" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/471/9a31f054c7d76/joblib-1.5.1-py3-none-any.whl", hash = "sha256:4719a31f054c7d766948dcd83e9613686b27114f190f717cec7eaa2084f8a74a" },
+]
+
+[[package]]
+name = "jsonschema"
+version = "4.25.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "jsonschema-specifications" },
+    { name = "referencing" },
+    { name = "rpds-py" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e63/acf5c11762c0e/jsonschema-4.25.0.tar.gz", hash = "sha256:e63acf5c11762c0e6672ffb61482bdf57f0876684d8d249c0fe2d730d48bc55f" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/24c/2e8da302de79c/jsonschema-4.25.0-py3-none-any.whl", hash = "sha256:24c2e8da302de79c8b9382fee3e76b355e44d2a4364bb207159ce10b517bd716" },
+]
+
+[[package]]
+name = "jsonschema-specifications"
+version = "2025.4.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "referencing" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/630/159c9f4dbea16/jsonschema_specifications-2025.4.1.tar.gz", hash = "sha256:630159c9f4dbea161a6a2205c3011cc4f18ff381b189fff48bb39b9bf26ae608" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/465/3bffbd6584f7d/jsonschema_specifications-2025.4.1-py3-none-any.whl", hash = "sha256:4653bffbd6584f7de83a67e0d620ef16900b390ddc7939d56684d6c81e33f1af" },
+]
+
+[[package]]
+name = "lazy-loader"
+version = "0.4"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "packaging" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/47c/75182589b91a4/lazy_loader-0.4.tar.gz", hash = "sha256:47c75182589b91a4e1a85a136c074285a5ad4d9f39c63e0d7fb76391c4574cd1" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/342/aa8e14d543a15/lazy_loader-0.4-py3-none-any.whl", hash = "sha256:342aa8e14d543a154047afb4ba8ef17f5563baad3fc610d7b15b213b0f119efc" },
+]
+
+[[package]]
+name = "librosa"
+version = "0.11.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "audioread" },
+    { name = "decorator" },
+    { name = "joblib" },
+    { name = "lazy-loader" },
+    { name = "msgpack" },
+    { name = "numba" },
+    { name = "numpy" },
+    { name = "pooch" },
+    { name = "scikit-learn" },
+    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version < '3.11'" },
+    { name = "scipy", version = "1.16.1", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "soundfile" },
+    { name = "soxr" },
+    { name = "standard-aifc", marker = "python_full_version >= '3.13'" },
+    { name = "standard-sunau", marker = "python_full_version >= '3.13'" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f5e/d951ca189b375/librosa-0.11.0.tar.gz", hash = "sha256:f5ed951ca189b375bbe2e33b2abd7e040ceeee302b9bbaeeffdfddb8d0ace908" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0b6/415c4fd68bff4/librosa-0.11.0-py3-none-any.whl", hash = "sha256:0b6415c4fd68bff4c29288abe67c6d80b587e0e1e2cfb0aad23e4559504a7fa1" },
+]
+
+[[package]]
+name = "llvmlite"
+version = "0.44.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/076/67d66a5d150ab/llvmlite-0.44.0.tar.gz", hash = "sha256:07667d66a5d150abed9157ab6c0b9393c9356f229784a4385c02f99e94fc94d4" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9fb/adbfba8422123/llvmlite-0.44.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:9fbadbfba8422123bab5535b293da1cf72f9f478a65645ecd73e781f962ca614" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ccc/f8eb28f24840f/llvmlite-0.44.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:cccf8eb28f24840f2689fb1a45f9c0f7e582dd24e088dcf96e424834af11f791" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/720/2b678cdf90482/llvmlite-0.44.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7202b678cdf904823c764ee0fe2dfe38a76981f4c1e51715b4cb5abb6cf1d9e8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/405/26fb5e313d7b9/llvmlite-0.44.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:40526fb5e313d7b96bda4cbb2c85cd5374e04d80732dd36a282d72a560bb6408" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/41e/3839150db4330/llvmlite-0.44.0-cp310-cp310-win_amd64.whl", hash = "sha256:41e3839150db4330e1b2716c0be3b5c4672525b4c9005e17c7597f835f351ce2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/eed/7d5f29136bda6/llvmlite-0.44.0-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:eed7d5f29136bda63b6d7804c279e2b72e08c952b7c5df61f45db408e0ee52f3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ace/564d9fa44bb91/llvmlite-0.44.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:ace564d9fa44bb91eb6e6d8e7754977783c68e90a471ea7ce913bff30bd62427" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c5d/22c3bfc842668/llvmlite-0.44.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c5d22c3bfc842668168a786af4205ec8e3ad29fb1bc03fd11fd48460d0df64c1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f01/a394e9c9b7b1d/llvmlite-0.44.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f01a394e9c9b7b1d4e63c327b096d10f6f0ed149ef53d38a09b3749dcf8c9610" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d84/89634d43c20cd/llvmlite-0.44.0-cp311-cp311-win_amd64.whl", hash = "sha256:d8489634d43c20cd0ad71330dde1d5bc7b9966937a263ff1ec1cebb90dc50955" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1d6/71a56acf725bf/llvmlite-0.44.0-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:1d671a56acf725bf1b531d5ef76b86660a5ab8ef19bb6a46064a705c6ca80aad" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5f7/9a728e0435493/llvmlite-0.44.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:5f79a728e0435493611c9f405168682bb75ffd1fbe6fc360733b850c80a026db" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c01/43a5ef336da14/llvmlite-0.44.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c0143a5ef336da14deaa8ec26c5449ad5b6a2b564df82fcef4be040b9cacfea9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d75/2f89e31b66db6/llvmlite-0.44.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:d752f89e31b66db6f8da06df8b39f9b91e78c5feea1bf9e8c1fba1d1c24c065d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/eae/7e2d4ca8f88f8/llvmlite-0.44.0-cp312-cp312-win_amd64.whl", hash = "sha256:eae7e2d4ca8f88f89d315b48c6b741dcb925d6a1042da694aa16ab3dd4cbd3a1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/319/bddd44e5f71ae/llvmlite-0.44.0-cp313-cp313-macosx_10_14_x86_64.whl", hash = "sha256:319bddd44e5f71ae2689859b7203080716448a3cd1128fb144fe5c055219d516" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9c5/8867118bad04a/llvmlite-0.44.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:9c58867118bad04a0bb22a2e0068c693719658105e40009ffe95c7000fcde88e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/462/24058b13c96af/llvmlite-0.44.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:46224058b13c96af1365290bdfebe9a6264ae62fb79b2b55693deed11657a8bf" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/aa0/097052c32bf72/llvmlite-0.44.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:aa0097052c32bf721a4efc03bd109d335dfa57d9bffb3d4c24cc680711b8b4fc" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2fb/7c4f2fb86cbae/llvmlite-0.44.0-cp313-cp313-win_amd64.whl", hash = "sha256:2fb7c4f2fb86cbae6dca3db9ab203eeea0e22d73b99bc2341cdf9de93612e930" },
+]
+
+[[package]]
 name = "loguru"
 version = "0.7.3"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
@@ -365,6 +569,64 @@ dependencies = [
 sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/194/80589e77d47b8/loguru-0.7.3.tar.gz", hash = "sha256:19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6" }
 wheels = [
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/31a/33c10c8e1e104/loguru-0.7.3-py3-none-any.whl", hash = "sha256:31a33c10c8e1e10422bfd431aeb5d351c7cf7fa671e3c4df004162264b28220c" },
+]
+
+[[package]]
+name = "markupsafe"
+version = "3.0.2"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ee5/5d3edf80167e4/markupsafe-3.0.2.tar.gz", hash = "sha256:ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7e9/4c425039cde14/MarkupSafe-3.0.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:7e94c425039cde14257288fd61dcfb01963e658efbc0ff54f5306b06054700f8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9e2/d922824181480/MarkupSafe-3.0.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:9e2d922824181480953426608b81967de705c3cef4d1af983af849d7bd619158" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/38a/9ef736c01fccd/MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:38a9ef736c01fccdd6600705b09dc574584b89bea478200c5fbf112a6b0d5579" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bbc/b445fa71794da/MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bbcb445fa71794da8f178f0f6d66789a28d7319071af7a496d4d507ed566270d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/57c/b5a3cf367aeb1/MarkupSafe-3.0.2-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:57cb5a3cf367aeb1d316576250f65edec5bb3be939e9247ae594b4bcbc317dfb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/380/9ede931876f5b/MarkupSafe-3.0.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:3809ede931876f5b2ec92eef964286840ed3540dadf803dd570c3b7e13141a3b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e07/c3764494e3776/MarkupSafe-3.0.2-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:e07c3764494e3776c602c1e78e298937c3315ccc9043ead7e685b7f2b8d47b3c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b42/4c77b206d63d5/MarkupSafe-3.0.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:b424c77b206d63d500bcb69fa55ed8d0e6a3774056bdc4839fc9298a7edca171" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fca/bf5ff6eea076f/MarkupSafe-3.0.2-cp310-cp310-win32.whl", hash = "sha256:fcabf5ff6eea076f859677f5f0b6b5c1a51e70a376b0579e0eadef8db48c6b50" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6af/100e168aa82a5/MarkupSafe-3.0.2-cp310-cp310-win_amd64.whl", hash = "sha256:6af100e168aa82a50e186c82875a5893c5597a0c1ccdb0d8b40240b1f28b969a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/902/5b4018f3a1314/MarkupSafe-3.0.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:9025b4018f3a1314059769c7bf15441064b2207cb3f065e6ea1e7359cb46db9d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/933/35ca3812df2f3/MarkupSafe-3.0.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:93335ca3812df2f366e80509ae119189886b0f3c2b81325d39efdb84a1e2ae93" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2cb/8438c3cbb25e2/MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2cb8438c3cbb25e220c2ab33bb226559e7afb3baec11c4f218ffa7308603c832" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a12/3e330ef0853c6/MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a123e330ef0853c6e822384873bef7507557d8e4a082961e1defa947aa59ba84" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1e0/84f686b92e5b8/MarkupSafe-3.0.2-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1e084f686b92e5b83186b07e8a17fc09e38fff551f3602b249881fec658d3eca" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d82/13e09c917a951/MarkupSafe-3.0.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:d8213e09c917a951de9d09ecee036d5c7d36cb6cb7dbaece4c71a60d79fb9798" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5b0/2fb34468b6aaa/MarkupSafe-3.0.2-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:5b02fb34468b6aaa40dfc198d813a641e3a63b98c2b05a16b9f80b7ec314185e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0bf/f5e0ae4ef2e1a/MarkupSafe-3.0.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:0bff5e0ae4ef2e1ae4fdf2dfd5b76c75e5c2fa4132d05fc1b0dabcd20c7e28c4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6c8/9876f41da747c/MarkupSafe-3.0.2-cp311-cp311-win32.whl", hash = "sha256:6c89876f41da747c8d3677a2b540fb32ef5715f97b66eeb0c6b66f5e3ef6f59d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/70a/87b411535ccad/MarkupSafe-3.0.2-cp311-cp311-win_amd64.whl", hash = "sha256:70a87b411535ccad5ef2f1df5136506a10775d267e197e4cf531ced10537bd6b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/977/8bd8ab0a994eb/MarkupSafe-3.0.2-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:9778bd8ab0a994ebf6f84c2b949e65736d5575320a17ae8984a77fab08db94cf" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/846/ade7b71e3536c/MarkupSafe-3.0.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:846ade7b71e3536c4e56b386c2a47adf5741d2d8b94ec9dc3e92e5e1ee1e2225" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1c9/9d261bd2d5f6b/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1c99d261bd2d5f6b59325c92c73df481e05e57f19837bdca8413b9eac4bd8028" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e17/c96c14e192785/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e17c96c14e19278594aa4841ec148115f9c7615a47382ecb6b82bd8fea3ab0c8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/884/16bd1e65dcea1/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:88416bd1e65dcea10bc7569faacb2c20ce071dd1f87539ca2ab364bf6231393c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/218/1e67807fc2fa7/MarkupSafe-3.0.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:2181e67807fc2fa785d0592dc2d6206c019b9502410671cc905d132a92866557" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/523/05740fe773d09/MarkupSafe-3.0.2-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:52305740fe773d09cffb16f8ed0427942901f00adedac82ec8b67752f58a1b22" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ad1/0d3ded218f103/MarkupSafe-3.0.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:ad10d3ded218f1039f11a75f8091880239651b52e9bb592ca27de44eed242a48" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0f4/ca02bea9a2322/MarkupSafe-3.0.2-cp312-cp312-win32.whl", hash = "sha256:0f4ca02bea9a23221c0182836703cbf8930c5e9454bacce27e767509fa286a30" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8e0/6879fc22a25ca/MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl", hash = "sha256:8e06879fc22a25ca47312fbe7c8264eb0b662f6db27cb2d3bbbc74b1df4b9b87" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ba9/527cdd4c926ed/MarkupSafe-3.0.2-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:ba9527cdd4c926ed0760bc301f6728ef34d841f405abf9d4f959c478421e4efd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f8b/3d067f2e40fe9/MarkupSafe-3.0.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:f8b3d067f2e40fe93e1ccdd6b2e1d16c43140e76f02fb1319a05cf2b79d99430" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/569/511d3b58c8791/MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:569511d3b58c8791ab4c2e1285575265991e6d8f8700c7be0e88f86cb0672094" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/15a/b75ef81add558/MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:15ab75ef81add55874e7ab7055e9c397312385bd9ced94920f2802310c930396" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f38/18cb119498c06/MarkupSafe-3.0.2-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f3818cb119498c0678015754eba762e0d61e5b52d34c8b13d770f0719f7b1d79" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cdb/82a876c47801b/MarkupSafe-3.0.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:cdb82a876c47801bb54a690c5ae105a46b392ac6099881cdfb9f6e95e4014c6a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cab/c348d87e913db/MarkupSafe-3.0.2-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:cabc348d87e913db6ab4aa100f01b08f481097838bdddf7c7a84b7575b7309ca" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/444/dcda765c8a838/MarkupSafe-3.0.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:444dcda765c8a838eaae23112db52f1efaf750daddb2d9ca300bcae1039adc5c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bcf/3e58998965654/MarkupSafe-3.0.2-cp313-cp313-win32.whl", hash = "sha256:bcf3e58998965654fdaff38e58584d8937aa3096ab5354d493c77d1fdd66d7a1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e6a/2a455bd412959/MarkupSafe-3.0.2-cp313-cp313-win_amd64.whl", hash = "sha256:e6a2a455bd412959b57a172ce6328d2dd1f01cb2135efda2e4576e8a23fa3b0f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b5a/6b3ada725cea8/MarkupSafe-3.0.2-cp313-cp313t-macosx_10_13_universal2.whl", hash = "sha256:b5a6b3ada725cea8a5e634536b1b01c30bcdcd7f9c6fff4151548d5bf6b3a36c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a90/4af0a6162c73e/MarkupSafe-3.0.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:a904af0a6162c73e3edcb969eeeb53a63ceeb5d8cf642fade7d39e7963a22ddb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4aa/4e5faecf353ed/MarkupSafe-3.0.2-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4aa4e5faecf353ed117801a068ebab7b7e09ffb6e1d5e412dc852e0da018126c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c0e/f13eaeee5b615/MarkupSafe-3.0.2-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c0ef13eaeee5b615fb07c9a7dadb38eac06a0608b41570d8ade51c56539e509d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d16/a81a06776313e/MarkupSafe-3.0.2-cp313-cp313t-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d16a81a06776313e817c951135cf7340a3e91e8c1ff2fac444cfd75fffa04afe" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/638/1026f158fdb7c/MarkupSafe-3.0.2-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:6381026f158fdb7c72a168278597a5e3a5222e83ea18f543112b2662a9b699c5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3d7/9d162e7be8f99/MarkupSafe-3.0.2-cp313-cp313t-musllinux_1_2_i686.whl", hash = "sha256:3d79d162e7be8f996986c064d1c7c817f6df3a77fe3d6859f6f9e7be4b8c213a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/131/a3c7689c85f5a/MarkupSafe-3.0.2-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:131a3c7689c85f5ad20f9f6fb1b866f402c445b220c19fe4308c0b147ccd2ad9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ba8/062ed2cf21c07/MarkupSafe-3.0.2-cp313-cp313t-win32.whl", hash = "sha256:ba8062ed2cf21c07a9e295d5b8a2a5ce678b913b45fdf68c32d95d6c1291e0b6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e44/4a31f8db13eb1/MarkupSafe-3.0.2-cp313-cp313t-win_amd64.whl", hash = "sha256:e444a31f8db13eb18ada366ab3cf45fd4b31e4db1236a4448f68778c1d1a5a2f" },
 ]
 
 [[package]]
@@ -384,153 +646,176 @@ wheels = [
 ]
 
 [[package]]
-name = "numpy"
-version = "2.2.6"
+name = "mistral-common"
+version = "1.8.2"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "jsonschema" },
+    { name = "numpy" },
+    { name = "pillow" },
+    { name = "pydantic" },
+    { name = "pydantic-extra-types", extra = ["pycountry"] },
+    { name = "requests" },
+    { name = "sentencepiece" },
+    { name = "tiktoken" },
+    { name = "typing-extensions" },
+]
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/jp6/cu126/+f/fdd/574b0ef3a5b8e/mistral_common-1.8.2-py3-none-any.whl", hash = "sha256:fdd574b0ef3a5b8e1ddff5cbd97d0a38fcd62e8d96353e63a45437752e0e36c6" },
+]
+
+[package.optional-dependencies]
+audio = [
+    { name = "soundfile" },
+    { name = "soxr" },
+]
+
+[[package]]
+name = "mpmath"
+version = "1.3.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7a2/8eb2a9774d00c/mpmath-1.3.0.tar.gz", hash = "sha256:7a28eb2a9774d00c7bc92411c19a89209d5da7c4c9a9e227be8330a23a25b91f" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a0b/2b9fe80bbcd81/mpmath-1.3.0-py3-none-any.whl", hash = "sha256:a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c" },
+]
+
+[[package]]
+name = "msgpack"
+version = "1.1.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/77b/79ce34a2bdab2/msgpack-1.1.1.tar.gz", hash = "sha256:77b79ce34a2bdab2594f490c8e80dd62a02d650b91a75159a63ec413b8d104cd" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/353/b6fc0c36fde68/msgpack-1.1.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:353b6fc0c36fde68b661a12949d7d49f8f51ff5fa019c1e47c87c4ff34b080ed" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/79c/408fcf76a9584/msgpack-1.1.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:79c408fcf76a958491b4e3b103d1c417044544b68e96d06432a189b43d1215c8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/784/26096939c2c74/msgpack-1.1.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:78426096939c2c7482bf31ef15ca219a9e24460289c00dd0b94411040bb73ad2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8b1/7ba27727a36cb/msgpack-1.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8b17ba27727a36cb73aabacaa44b13090feb88a01d012c0f4be70c00f75048b4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7a1/7ac1ea6ec3c76/msgpack-1.1.1-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7a17ac1ea6ec3c7687d70201cfda3b1e8061466f28f686c24f627cae4ea8efd0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/88d/1e966c9235c1d/msgpack-1.1.1-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:88d1e966c9235c1d4e2afac21ca83933ba59537e2e2727a999bf3f515ca2af26" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f6d/58656842e1b2d/msgpack-1.1.1-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:f6d58656842e1b2ddbe07f43f56b10a60f2ba5826164910968f5933e5178af75" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/96d/ecdfc4adcbc08/msgpack-1.1.1-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:96decdfc4adcbc087f5ea7ebdcfd3dee9a13358cae6e81d54be962efc38f6338" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/664/0fd979ca9a212/msgpack-1.1.1-cp310-cp310-win32.whl", hash = "sha256:6640fd979ca9a212e4bcdf6eb74051ade2c690b862b679bfcb60ae46e6dc4bfd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8b6/5b53204fe1bd0/msgpack-1.1.1-cp310-cp310-win_amd64.whl", hash = "sha256:8b65b53204fe1bd037c40c4148d00ef918eb2108d24c9aaa20bc31f9810ce0a8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/71e/f05c1726884e4/msgpack-1.1.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:71ef05c1726884e44f8b1d1773604ab5d4d17729d8491403a705e649116c9558" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/360/43272c6aede30/msgpack-1.1.1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:36043272c6aede309d29d56851f8841ba907a1a3d04435e43e8a19928e243c1d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a32/747b1b39c3ac2/msgpack-1.1.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a32747b1b39c3ac27d0670122b57e6e57f28eefb725e0b625618d1b59bf9d1e0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8a8/b10fdb84a43e5/msgpack-1.1.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8a8b10fdb84a43e50d38057b06901ec9da52baac6983d3f709d8507f3889d43f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ba0/c325c3f485dc5/msgpack-1.1.1-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ba0c325c3f485dc54ec298d8b024e134acf07c10d494ffa24373bea729acf704" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/88d/aaf7d146e48ec/msgpack-1.1.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:88daaf7d146e48ec71212ce21109b66e06a98e5e44dca47d853cbfe171d6c8d2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d8b/55ea20dc59b18/msgpack-1.1.1-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:d8b55ea20dc59b181d3f47103f113e6f28a5e1c89fd5b67b9140edb442ab67f2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4a2/8e8072ae9779f/msgpack-1.1.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:4a28e8072ae9779f20427af07f53bbb8b4aa81151054e882aee333b158da8752" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7da/8831f9a0fdb52/msgpack-1.1.1-cp311-cp311-win32.whl", hash = "sha256:7da8831f9a0fdb526621ba09a281fadc58ea12701bc709e7b8cbc362feabc295" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5fd/1b58e1431008a/msgpack-1.1.1-cp311-cp311-win_amd64.whl", hash = "sha256:5fd1b58e1431008a57247d6e7cc4faa41c3607e8e7d4aaf81f7c29ea013cb458" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ae4/97b11f4c21558/msgpack-1.1.1-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:ae497b11f4c21558d95de9f64fff7053544f4d1a17731c866143ed6bb4591238" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/33b/e9ab121df9b6b/msgpack-1.1.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:33be9ab121df9b6b461ff91baac6f2731f83d9b27ed948c5b9d1978ae28bf157" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6f6/4ae8fe7ffba25/msgpack-1.1.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6f64ae8fe7ffba251fecb8408540c34ee9df1c26674c50c4544d72dbf792e5ce" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a49/4554874691720/msgpack-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a494554874691720ba5891c9b0b39474ba43ffb1aaf32a5dac874effb1619e1a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cb6/43284ab0ed26f/msgpack-1.1.1-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:cb643284ab0ed26f6957d969fe0dd8bb17beb567beb8998140b5e38a90974f6c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d27/5a9e3c81b1093/msgpack-1.1.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:d275a9e3c81b1093c060c3837e580c37f47c51eca031f7b5fb76f7b8470f5f9b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4fd/6b577e4541676/msgpack-1.1.1-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:4fd6b577e4541676e0cc9ddc1709d25014d3ad9a66caa19962c4f5de30fc09ef" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bb2/9aaa613c0a1c4/msgpack-1.1.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:bb29aaa613c0a1c40d1af111abf025f1732cab333f96f285d6a93b934738a68a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/870/b9a626280c86c/msgpack-1.1.1-cp312-cp312-win32.whl", hash = "sha256:870b9a626280c86cff9c576ec0d9cbcc54a1e5ebda9cd26dab12baf41fee218c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/569/2095123007180/msgpack-1.1.1-cp312-cp312-win_amd64.whl", hash = "sha256:5692095123007180dca3e788bb4c399cc26626da51629a31d40207cb262e67f4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/376/5afa6bd4832fc/msgpack-1.1.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:3765afa6bd4832fc11c3749be4ba4b69a0e8d7b728f78e68120a157a4c5d41f0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8dd/b2bcfd1a8b9e4/msgpack-1.1.1-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:8ddb2bcfd1a8b9e431c8d6f4f7db0773084e107730ecf3472f1dfe9ad583f3d9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/196/a736f0526a036/msgpack-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:196a736f0526a03653d829d7d4c5500a97eea3648aebfd4b6743875f28aa2af8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9d5/92d06e3cc2f53/msgpack-1.1.1-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9d592d06e3cc2f537ceeeb23d38799c6ad83255289bb84c2e5792e5a8dea268a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4df/2311b0ce24f06/msgpack-1.1.1-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:4df2311b0ce24f06ba253fda361f938dfecd7b961576f9be3f3fbd60e87130ac" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e41/41c5a32b5e379/msgpack-1.1.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:e4141c5a32b5e37905b5940aacbc59739f036930367d7acce7a64e4dec1f5e0b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b1c/e7f41670c5a69/msgpack-1.1.1-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:b1ce7f41670c5a69e1389420436f41385b1aa2504c3b0c30620764b15dded2e7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/414/7151acabb9cae/msgpack-1.1.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:4147151acabb9caed4e474c3344181e91ff7a388b888f1e19ea04f7e73dc7ad5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/500/e85823a27d6d9/msgpack-1.1.1-cp313-cp313-win32.whl", hash = "sha256:500e85823a27d6d9bba1d057c871b4210c1dd6fb01fbb764e37e4e8847376323" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6d4/89fba54629598/msgpack-1.1.1-cp313-cp313-win_amd64.whl", hash = "sha256:6d489fba546295983abd142812bda76b57e33d0b9f5d5b71c09a583285506f69" },
+]
+
+[[package]]
+name = "networkx"
+version = "3.4.2"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
 resolution-markers = [
     "python_full_version < '3.11'",
 ]
-sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e29/554e2bef54a90/numpy-2.2.6.tar.gz", hash = "sha256:e29554e2bef54a90aa5cc07da6ce955accb83f21ab5de01a62c8478897b264fd" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/307/c3669428c5362/networkx-3.4.2.tar.gz", hash = "sha256:307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1" }
 wheels = [
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b41/2caa66f72040e/numpy-2.2.6-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:b412caa66f72040e6d268491a59f2c43bf03eb6c96dd8f0307829feb7fa2b6fb" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8e4/1fd67c52b8660/numpy-2.2.6-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8e41fd67c52b86603a91c1a505ebaef50b3314de0213461c7a6e99c9a3beff90" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/37e/990a01ae6ec7f/numpy-2.2.6-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:37e990a01ae6ec7fe7fa1c26c55ecb672dd98b19c3d0e1d1f326fa13cb38d163" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5a6/429d4be8ca66d/numpy-2.2.6-cp310-cp310-macosx_14_0_x86_64.whl", hash = "sha256:5a6429d4be8ca66d889b7cf70f536a397dc45ba6faeb5f8c5427935d9592e9cf" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/efd/28d4e9cd7d7a8/numpy-2.2.6-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:efd28d4e9cd7d7a8d39074a4d44c63eda73401580c5c76acda2ce969e0a38e83" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fc7/b73d02efb0e18/numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fc7b73d02efb0e18c000e9ad8b83480dfcd5dfd11065997ed4c6747470ae8915" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/74d/4531beb257d2c/numpy-2.2.6-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:74d4531beb257d2c3f4b261bfb0fc09e0f9ebb8842d82a7b4209415896adc680" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8fc/377d995680230/numpy-2.2.6-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:8fc377d995680230e83241d8a96def29f204b5782f371c532579b4f20607a289" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b09/3dd74e50a8cba/numpy-2.2.6-cp310-cp310-win32.whl", hash = "sha256:b093dd74e50a8cba3e873868d9e93a85b78e0daf2e98c6797566ad8044e8363d" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0f/d6321b839904e/numpy-2.2.6-cp310-cp310-win_amd64.whl", hash = "sha256:f0fd6321b839904e15c46e0d257fdd101dd7f530fe03fd6359c1ea63738703f3" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f9f/1adb22318e121/numpy-2.2.6-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:f9f1adb22318e121c5c69a09142811a201ef17ab257a1e66ca3025065b7f53ae" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c82/0a93b0255bc36/numpy-2.2.6-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c820a93b0255bc360f53eca31a0e676fd1101f673dda8da93454a12e23fc5f7a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3d7/0692235e759f2/numpy-2.2.6-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:3d70692235e759f260c3d837193090014aebdf026dfd167834bcba43e30c2a42" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/481/b49095335f8ee/numpy-2.2.6-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:481b49095335f8eed42e39e8041327c05b0f6f4780488f61286ed3c01368d491" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b64/d8d4d17135e00/numpy-2.2.6-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b64d8d4d17135e00c8e346e0a738deb17e754230d7e0810ac5012750bbd85a5a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ba1/0f8411898fc41/numpy-2.2.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ba10f8411898fc418a521833e014a77d3ca01c15b0c6cdcce6a0d2897e6dbbdf" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bd4/8227a919f1baf/numpy-2.2.6-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:bd48227a919f1bafbdda0583705e547892342c26fb127219d60a5c36882609d1" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/955/1a499bf125c1d/numpy-2.2.6-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:9551a499bf125c1d4f9e250377c1ee2eddd02e01eac6644c080162c0c51778ab" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/067/8000bb9ac1475/numpy-2.2.6-cp311-cp311-win32.whl", hash = "sha256:0678000bb9ac1475cd454c6b8c799206af8107e310843532b04d49649c717a47" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e82/13002e427c69c/numpy-2.2.6-cp311-cp311-win_amd64.whl", hash = "sha256:e8213002e427c69c45a52bbd94163084025f533a55a59d6f9c5b820774ef3303" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/41c/5a21f4a04fa86/numpy-2.2.6-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:41c5a21f4a04fa86436124d388f6ed60a9343a6f767fced1a8a71c3fbca038ff" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/de7/49064336d37e3/numpy-2.2.6-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:de749064336d37e340f640b05f24e9e3dd678c57318c7289d222a8a2f543e90c" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/894/b3a42502226a1/numpy-2.2.6-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:894b3a42502226a1cac872f840030665f33326fc3dac8e57c607905773cdcde3" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/715/94f7c51a18e72/numpy-2.2.6-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:71594f7c51a18e728451bb50cc60a3ce4e6538822731b2933209a1f3614e9282" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f26/18db89be1b4e0/numpy-2.2.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f2618db89be1b4e05f7a1a847a9c1c0abd63e63a1607d892dd54668dd92faf87" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fd8/3c01228a68873/numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/37c/0ca431f82cd5f/numpy-2.2.6-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:37c0ca431f82cd5fa716eca9506aefcabc247fb27ba69c5062a6d3ade8cf8f49" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fe2/7749d33bb772c/numpy-2.2.6-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fe27749d33bb772c80dcd84ae7e8df2adc920ae8297400dabec45f0dedb3f6de" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4ee/aae00d789f66c/numpy-2.2.6-cp312-cp312-win32.whl", hash = "sha256:4eeaae00d789f66c7a25ac5f34b71a7035bb474e679f410e5e1a94deb24cf2d4" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c1f/9540be5794069/numpy-2.2.6-cp312-cp312-win_amd64.whl", hash = "sha256:c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/081/1bb762109d970/numpy-2.2.6-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:0811bb762109d9708cca4d0b13c4f67146e3c3b7cf8d34018c722adb2d957c84" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/287/cc3162b6f0146/numpy-2.2.6-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:287cc3162b6f01463ccd86be154f284d0893d2b3ed7292439ea97eafa8170e0b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f13/72f041402e37e/numpy-2.2.6-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:f1372f041402e37e5e633e586f62aa53de2eac8d98cbfb822806ce4bbefcb74d" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/55a/4d33fa519660d/numpy-2.2.6-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:55a4d33fa519660d69614a9fad433be87e5252f4b03850642f88993f7b2ca566" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f92/729c95468a2f4/numpy-2.2.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f92729c95468a2f4f15e9bb94c432a9229d0d50de67304399627a943201baa2f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1bc/23a79bfabc5d0/numpy-2.2.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1bc23a79bfabc5d056d106f9befb8d50c31ced2fbc70eedb8155aec74a45798f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e31/43e4451880bed/numpy-2.2.6-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:e3143e4451880bed956e706a3220b4e5cf6172ef05fcc397f6f36a550b1dd868" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b4f/13750ce797515/numpy-2.2.6-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:b4f13750ce79751586ae2eb824ba7e1e8dba64784086c98cdbbcc6a42112ce0d" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5be/b72339d9d4fa3/numpy-2.2.6-cp313-cp313-win32.whl", hash = "sha256:5beb72339d9d4fa36522fc63802f469b13cdbe4fdab4a288f0c441b74272ebfd" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b05/44343a702fa80/numpy-2.2.6-cp313-cp313-win_amd64.whl", hash = "sha256:b0544343a702fa80c95ad5d3d608ea3599dd54d4632df855e4c8d24eb6ecfa1c" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0bc/a768cd85ae743/numpy-2.2.6-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:0bca768cd85ae743b2affdc762d617eddf3bcf8724435498a1e80132d04879e6" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fc0/c5673685c508a/numpy-2.2.6-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:fc0c5673685c508a142ca65209b4e79ed6740a4ed6b2267dbba90f34b0b3cfda" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5bd/4fc3ac8926b38/numpy-2.2.6-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:5bd4fc3ac8926b3819797a7c0e2631eb889b4118a9898c84f585a54d475b7e40" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fee/4236c876c4e83/numpy-2.2.6-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:fee4236c876c4e8369388054d02d0e9bb84821feb1a64dd59e137e6511a551f8" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e1d/da9c7e08dc141/numpy-2.2.6-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e1dda9c7e08dc141e0247a5b8f49cf05984955246a327d4c48bda16821947b2f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f44/7e6acb680fd30/numpy-2.2.6-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f447e6acb680fd307f40d3da4852208af94afdfab89cf850986c3ca00562f4fa" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/389/d771b1623ec92/numpy-2.2.6-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:389d771b1623ec92636b0786bc4ae56abafad4a4c513d36a55dce14bd9ce8571" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8e9/ace4a37db2342/numpy-2.2.6-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:8e9ace4a37db23421249ed236fdcdd457d671e25146786dfc96835cd951aa7c1" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/038/613e9fb8c72b0/numpy-2.2.6-cp313-cp313t-win32.whl", hash = "sha256:038613e9fb8c72b0a41f025a7e4c3f0b7a1b5d768ece4796b674c8f3fe13efff" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/603/1dd6dfecc0cf9/numpy-2.2.6-cp313-cp313t-win_amd64.whl", hash = "sha256:6031dd6dfecc0cf9f668681a37648373bddd6421fff6c66ec1624eed0180ee06" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0b6/05b275d7bd0c6/numpy-2.2.6-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:0b605b275d7bd0c640cad4e5d30fa701a8d59302e127e5f79138ad62762c3e3d" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7be/fc596a7dc9da8/numpy-2.2.6-pp310-pypy310_pp73-macosx_14_0_x86_64.whl", hash = "sha256:7befc596a7dc9da8a337f79802ee8adb30a552a94f792b9c9d18c840055907db" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ce4/7521a4754c8f4/numpy-2.2.6-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ce47521a4754c8f4593837384bd3424880629f718d87c5d44f8ed763edd63543" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d04/2d24c90c41b54/numpy-2.2.6-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:d042d24c90c41b54fd506da306759e06e568864df8ec17ccc17e9e884634fd00" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/df5/d4365b724cf81/networkx-3.4.2-py3-none-any.whl", hash = "sha256:df5d4365b724cf81b8c6a7312509d0c22386097011ad1abe274afd5e9d3bbc5f" },
+]
+
+[[package]]
+name = "networkx"
+version = "3.5"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+resolution-markers = [
+    "python_full_version >= '3.14'",
+    "python_full_version == '3.13.*'",
+    "python_full_version == '3.12.*'",
+    "python_full_version == '3.11.*'",
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d4c/6f9cf81f52d69/networkx-3.5.tar.gz", hash = "sha256:d4c6f9cf81f52d69230866796b82afbccdec3db7ae4fbd1b65ea750feed50037" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/003/0d386a9a06dee/networkx-3.5-py3-none-any.whl", hash = "sha256:0030d386a9a06dee3565298b4a734b68589749a544acbb6c412dc9e2489ec6ec" },
+]
+
+[[package]]
+name = "numba"
+version = "0.61.2"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "llvmlite" },
+    { name = "numpy" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/875/0ee147940a663/numba-0.61.2.tar.gz", hash = "sha256:8750ee147940a6637b80ecf7f95062185ad8726c8c28a2295b8ec1160a196f7d" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cf9/f9fc00d6eca0c/numba-0.61.2-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:cf9f9fc00d6eca0c23fc840817ce9f439b9f03c8f03d6246c0e7f0cb15b7162a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ea0/247617edcb5dd/numba-0.61.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:ea0247617edcb5dd61f6106a56255baab031acc4257bddaeddb3a1003b4ca3fd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ae8/c7a522c26215d/numba-0.61.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ae8c7a522c26215d5f62ebec436e3d341f7f590079245a2f1008dfd498cc1642" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bd1/e74609855aa43/numba-0.61.2-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:bd1e74609855aa43661edffca37346e4e8462f6903889917e9f41db40907daa2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ae4/5830b129c6137/numba-0.61.2-cp310-cp310-win_amd64.whl", hash = "sha256:ae45830b129c6137294093b269ef0a22998ccc27bf7cf096ab8dcf7bca8946f9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/efd/3db391df53aaa/numba-0.61.2-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:efd3db391df53aaa5cfbee189b6c910a5b471488749fd6606c3f33fc984c2ae2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/49c/980e4171948ff/numba-0.61.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:49c980e4171948ffebf6b9a2520ea81feed113c1f4890747ba7f59e74be84b1b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/394/5615cd73c2c7e/numba-0.61.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:3945615cd73c2c7eba2a85ccc9c1730c21cd3958bfcf5a44302abae0fb07bb60" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bbf/df4eca202ceba/numba-0.61.2-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:bbfdf4eca202cebade0b7d43896978e146f39398909a42941c9303f82f403a18" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/76b/cec9f46259ced/numba-0.61.2-cp311-cp311-win_amd64.whl", hash = "sha256:76bcec9f46259cedf888041b9886e257ae101c6268261b19fda8cfbc52bec9d1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/34f/ba9406078bac7/numba-0.61.2-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:34fba9406078bac7ab052efbf0d13939426c753ad72946baaa5bf9ae0ebb8dd2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4dd/ce10009bc097b/numba-0.61.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:4ddce10009bc097b080fc96876d14c051cc0c7679e99de3e0af59014dab7dfe8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5b1/bb509d01f23d7/numba-0.61.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:5b1bb509d01f23d70325d3a5a0e237cbc9544dd50e50588bc581ba860c213546" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/48a/53a3de8f87935/numba-0.61.2-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:48a53a3de8f8793526cbe330f2a39fe9a6638efcbf11bd63f3d2f9757ae345cd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/97c/f4f12c728cf77/numba-0.61.2-cp312-cp312-win_amd64.whl", hash = "sha256:97cf4f12c728cf77c9c1d7c23707e4d8fb4632b46275f8f3397de33e5877af18" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3a1/0a8fc9afac40b/numba-0.61.2-cp313-cp313-macosx_10_14_x86_64.whl", hash = "sha256:3a10a8fc9afac40b1eac55717cece1b8b1ac0b946f5065c89e00bde646b5b154" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7d3/bcada3c9afba3/numba-0.61.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:7d3bcada3c9afba3bed413fba45845f2fb9cd0d2b27dd58a1be90257e293d140" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bdb/ca73ad81fa196/numba-0.61.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:bdbca73ad81fa196bd53dc12e3aaf1564ae036e0c125f237c7644fe64a4928ab" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5f1/54aaea625fb32/numba-0.61.2-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:5f154aaea625fb32cfbe3b80c5456d514d416fcdf79733dd69c0df3a11348e9e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/593/21215e2e0ac5f/numba-0.61.2-cp313-cp313-win_amd64.whl", hash = "sha256:59321215e2e0ac5fa928a8020ab00b8e57cda8a97384963ac0dfa4d4e6aa54e7" },
 ]
 
 [[package]]
 name = "numpy"
-version = "2.3.2"
+version = "1.26.4"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
-resolution-markers = [
-    "python_full_version >= '3.14'",
-    "python_full_version >= '3.11' and python_full_version < '3.14'",
-]
-sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e04/86a11ec30cdec/numpy-2.3.2.tar.gz", hash = "sha256:e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2a0/2aba9ed12e4ac/numpy-1.26.4.tar.gz", hash = "sha256:2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010" }
 wheels = [
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/852/ae5bed3478b92/numpy-2.3.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:852ae5bed3478b92f093e30f785c98e0cb62fa0a939ed057c31716e18a7a22b9" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7a0/e27186e781a69/numpy-2.3.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:7a0e27186e781a69959d0230dd9909b5e26024f8da10683bd6344baea1885168" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0a/1a8476ad77a22/numpy-2.3.2-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:f0a1a8476ad77a228e41619af2fa9505cf69df928e9aaa165746584ea17fed2b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cbc/95b3813920145/numpy-2.3.2-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:cbc95b3813920145032412f7e33d12080f11dc776262df1712e1638207dde9e8" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f75/018be4980a732/numpy-2.3.2-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f75018be4980a7324edc5930fe39aa391d5734531b1926968605416ff58c332d" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/20b/8200721840f56/numpy-2.3.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:20b8200721840f5621b7bd03f8dcd78de33ec522fc40dc2641aa09537df010c3" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1f9/1e5c028504660/numpy-2.3.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:1f91e5c028504660d606340a084db4b216567ded1056ea2b4be4f9d10b67197f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fb1/752a3bb9a3ad2/numpy-2.3.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:fb1752a3bb9a3ad2d6b090b88a9a0ae1cd6f004ef95f75825e2f382c183b2097" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4ae/6863868aaee2f/numpy-2.3.2-cp311-cp311-win32.whl", hash = "sha256:4ae6863868aaee2f57503c7a5052b3a2807cf7a3914475e637a0ecd366ced220" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/240/259d6564f1c65/numpy-2.3.2-cp311-cp311-win_amd64.whl", hash = "sha256:240259d6564f1c65424bcd10f435145a7644a65a6811cfc3201c4a429ba79170" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/420/9f874d45f921b/numpy-2.3.2-cp311-cp311-win_arm64.whl", hash = "sha256:4209f874d45f921bde2cff1ffcd8a3695f545ad2ffbef6d3d3c6768162efab89" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bc3/186bea41fae9d/numpy-2.3.2-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:bc3186bea41fae9d8e90c2b4fb5f0a1f5a690682da79b92574d63f56b529080b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2f4/f0215edb18904/numpy-2.3.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:2f4f0215edb189048a3c03bd5b19345bdfa7b45a7a6f72ae5945d2a28272727f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8b1/224a734cd509f/numpy-2.3.2-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:8b1224a734cd509f70816455c3cffe13a4f599b1bf7130f913ba0e2c0b2006c0" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3dc/f02866b977a38/numpy-2.3.2-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:3dcf02866b977a38ba3ec10215220609ab9667378a9e2150615673f3ffd6c73b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/572/d5512df5470f5/numpy-2.3.2-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:572d5512df5470f50ada8d1972c5f1082d9a0b7aa5944db8084077570cf98370" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/814/5dd6d10df13c5/numpy-2.3.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:8145dd6d10df13c559d1e4314df29695613575183fa2e2d11fac4c208c8a1f73" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/103/ea7063fa624af/numpy-2.3.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:103ea7063fa624af04a791c39f97070bf93b96d7af7eb23530cd087dc8dbe9dc" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fc9/27d7f289d14f5/numpy-2.3.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fc927d7f289d14f5e037be917539620603294454130b6de200091e23d27dc9be" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d95/f59afe7f808c1/numpy-2.3.2-cp312-cp312-win32.whl", hash = "sha256:d95f59afe7f808c103be692175008bab926b59309ade3e6d25009e9a171f7036" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9e1/96ade2400c0c7/numpy-2.3.2-cp312-cp312-win_amd64.whl", hash = "sha256:9e196ade2400c0c737d93465327d1ae7c06c7cb8a1756121ebf54b06ca183c7f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ee8/07923782faaf6/numpy-2.3.2-cp312-cp312-win_arm64.whl", hash = "sha256:ee807923782faaf60d0d7331f5e86da7d5e3079e28b291973c545476c2b00d07" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c8d/9727f5316a256/numpy-2.3.2-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:c8d9727f5316a256425892b043736d63e89ed15bbfe6556c5ff4d9d4448ff3b3" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/efc/81393f25f14d1/numpy-2.3.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:efc81393f25f14d11c9d161e46e6ee348637c0a1e8a54bf9dedc472a3fae993b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/dd9/37f088a2df683/numpy-2.3.2-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:dd937f088a2df683cbb79dda9a772b62a3e5a8a7e76690612c2737f38c6ef1b6" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/11e/58218c0c46c80/numpy-2.3.2-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:11e58218c0c46c80509186e460d79fbdc9ca1eb8d8aee39d8f2dc768eb781089" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5ad/4ebcb683a1f99/numpy-2.3.2-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5ad4ebcb683a1f99f4f392cc522ee20a18b2bb12a2c1c42c3d48d5a1adc9d3d2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/938/065908d1d869c/numpy-2.3.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:938065908d1d869c7d75d8ec45f735a034771c6ea07088867f713d1cd3bbbe4f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/664/59dccc65d8ec9/numpy-2.3.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:66459dccc65d8ec98cc7df61307b64bf9e08101f9598755d42d8ae65d9a7a6ee" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a7a/f9ed2aa9ec595/numpy-2.3.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:a7af9ed2aa9ec5950daf05bb11abc4076a108bd3c7db9aa7251d5f107079b6a6" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/906/a30249315f9c8/numpy-2.3.2-cp313-cp313-win32.whl", hash = "sha256:906a30249315f9c8e17b085cc5f87d3f369b35fedd0051d4a84686967bdbbd0b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c63/d95dc9d67b676/numpy-2.3.2-cp313-cp313-win_amd64.whl", hash = "sha256:c63d95dc9d67b676e9108fe0d2182987ccb0f11933c1e8959f42fa0da8d4fa56" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b05/a89f2fb84d212/numpy-2.3.2-cp313-cp313-win_arm64.whl", hash = "sha256:b05a89f2fb84d21235f93de47129dd4f11c16f64c87c33f5e284e6a3a54e43f2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4e6/ecfeddfa83b02/numpy-2.3.2-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:4e6ecfeddfa83b02318f4d84acf15fbdbf9ded18e46989a15a8b6995dfbf85ab" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/508/b0eada3eded10/numpy-2.3.2-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:508b0eada3eded10a3b55725b40806a4b855961040180028f52580c4729916a2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/754/d6755d9a7588b/numpy-2.3.2-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:754d6755d9a7588bdc6ac47dc4ee97867271b17cee39cb87aef079574366db0a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a9f/66e7d2b2d7712/numpy-2.3.2-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:a9f66e7d2b2d7712410d3bc5684149040ef5f19856f20277cd17ea83e5006286" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/de6/ea4e5a65d5a90/numpy-2.3.2-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:de6ea4e5a65d5a90c7d286ddff2b87f3f4ad61faa3db8dabe936b34c2275b6f8" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a3e/f07ec8cbc8fc9/numpy-2.3.2-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:a3ef07ec8cbc8fc9e369c8dcd52019510c12da4de81367d8b20bc692aa07573a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/27c/9f90e7481275c/numpy-2.3.2-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:27c9f90e7481275c7800dc9c24b7cc40ace3fdb970ae4d21eaff983a32f70c91" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/07b/62978075b67ee/numpy-2.3.2-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:07b62978075b67eee4065b166d000d457c82a1efe726cce608b9db9dd66a73a5" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c77/1cfac34a4f2c0/numpy-2.3.2-cp313-cp313t-win32.whl", hash = "sha256:c771cfac34a4f2c0de8e8c97312d07d64fd8f8ed45bc9f5726a7e947270152b5" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/72d/bebb2dcc8305c/numpy-2.3.2-cp313-cp313t-win_amd64.whl", hash = "sha256:72dbebb2dcc8305c431b2836bcc66af967df91be793d63a24e3d9b741374c450" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/72c/6df2267e926a6/numpy-2.3.2-cp313-cp313t-win_arm64.whl", hash = "sha256:72c6df2267e926a6d5286b0a6d556ebe49eae261062059317837fda12ddf0c1a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/448/a66d052d0cf14/numpy-2.3.2-cp314-cp314-macosx_10_13_x86_64.whl", hash = "sha256:448a66d052d0cf14ce9865d159bfc403282c9bc7bb2a31b03cc18b651eca8b1a" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/546/aaf78e81b4081/numpy-2.3.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:546aaf78e81b4081b2eba1d105c3b34064783027a06b3ab20b6eba21fb64132b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/87c/930d52f45df09/numpy-2.3.2-cp314-cp314-macosx_14_0_arm64.whl", hash = "sha256:87c930d52f45df092f7578889711a0768094debf73cfcde105e2d66954358125" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8dc/082ea901a62ed/numpy-2.3.2-cp314-cp314-macosx_14_0_x86_64.whl", hash = "sha256:8dc082ea901a62edb8f59713c6a7e28a85daddcb67454c839de57656478f5b19" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/af5/8de8745f7fa9c/numpy-2.3.2-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:af58de8745f7fa9ca1c0c7c943616c6fe28e75d0c81f5c295810e3c83b5be92f" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fed/5527c4cf10f16/numpy-2.3.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:fed5527c4cf10f16c6d0b6bee1f89958bccb0ad2522c8cadc2efd318bcd545f5" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/095/737ed986e0039/numpy-2.3.2-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:095737ed986e00393ec18ec0b21b47c22889ae4b0cd2d5e88342e08b01141f58" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b5e/40e80299607f5/numpy-2.3.2-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:b5e40e80299607f597e1a8a247ff8d71d79c5b52baa11cc1cce30aa92d2da6e0" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7d6/e390423cc1f76/numpy-2.3.2-cp314-cp314-win32.whl", hash = "sha256:7d6e390423cc1f76e1b8108c9b6889d20a7a1f59d9a60cac4a050fa734d6c1e2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b9d/0878b21e3918d/numpy-2.3.2-cp314-cp314-win_amd64.whl", hash = "sha256:b9d0878b21e3918d76d2209c924ebb272340da1fb51abc00f986c258cd5e957b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/273/8534837c6a1d0/numpy-2.3.2-cp314-cp314-win_arm64.whl", hash = "sha256:2738534837c6a1d0c39340a190177d7d66fdf432894f469728da901f8f6dc910" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4d0/02ecf7c9b5324/numpy-2.3.2-cp314-cp314t-macosx_10_13_x86_64.whl", hash = "sha256:4d002ecf7c9b53240be3bb69d80f86ddbd34078bae04d87be81c1f58466f264e" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/293/b2192c6bcce48/numpy-2.3.2-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:293b2192c6bcce487dbc6326de5853787f870aeb6c43f8f9c6496db5b1781e45" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0a4/f2021a6da53a0/numpy-2.3.2-cp314-cp314t-macosx_14_0_arm64.whl", hash = "sha256:0a4f2021a6da53a0d580d6ef5db29947025ae8b35b3250141805ea9a32bbe86b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9c1/44440db4bf3bb/numpy-2.3.2-cp314-cp314t-macosx_14_0_x86_64.whl", hash = "sha256:9c144440db4bf3bb6372d2c3e49834cc0ff7bb4c24975ab33e01199e645416f2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f92/d6c2a8535dc4f/numpy-2.3.2-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f92d6c2a8535dc4fe4419562294ff957f83a16ebdec66df0805e473ffaad8bd0" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cef/c2219baa48e46/numpy-2.3.2-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:cefc2219baa48e468e3db7e706305fcd0c095534a192a08f31e98d83a7d45fb0" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/76c/3e9501ceb50b2/numpy-2.3.2-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:76c3e9501ceb50b2ff3824c3589d5d1ab4ac857b0ee3f8f49629d0de55ecf7c2" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/122/bf5ed9a0221b3/numpy-2.3.2-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:122bf5ed9a0221b3419672493878ba4967121514b1d7d4656a7580cd11dddcbf" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6f1/ae3dcb840edcc/numpy-2.3.2-cp314-cp314t-win32.whl", hash = "sha256:6f1ae3dcb840edccc45af496f312528c15b1f79ac318169d094e85e4bb35fdf1" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/087/ffc25890d89a4/numpy-2.3.2-cp314-cp314t-win_amd64.whl", hash = "sha256:087ffc25890d89a43536f75c5fe8770922008758e8eeeef61733957041ed2f9b" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/092/aeb3449833ea9/numpy-2.3.2-cp314-cp314t-win_arm64.whl", hash = "sha256:092aeb3449833ea9c0bf0089d70c29ae480685dd2377ec9cdbbb620257f84631" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/14a/91ebac98813a4/numpy-2.3.2-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:14a91ebac98813a49bc6aa1a0dfc09513dcec1d97eaf31ca21a87221a1cdcb15" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/716/69b5daae69218/numpy-2.3.2-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:71669b5daae692189540cffc4c439468d35a3f84f0c88b078ecd94337f6cb0ec" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/697/79198d9caee6e/numpy-2.3.2-pp311-pypy311_pp73-macosx_14_0_arm64.whl", hash = "sha256:69779198d9caee6e547adb933941ed7520f896fd9656834c300bdf4dd8642712" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2c3/271cc4097beb5/numpy-2.3.2-pp311-pypy311_pp73-macosx_14_0_x86_64.whl", hash = "sha256:2c3271cc4097beb5a60f010bcc1cc204b300bb3eafb4399376418a83a1c6373c" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/844/6acd11fe3dc18/numpy-2.3.2-pp311-pypy311_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:8446acd11fe3dc1830568c941d44449fd5cb83068e5c70bd5a470d323d448296" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/aa0/98a5ab53fa407/numpy-2.3.2-pp311-pypy311_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:aa098a5ab53fa407fded5870865c6275a5cd4101cfdef8d6fafc48286a96e981" },
-    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/693/6aff90dda378c/numpy-2.3.2-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:6936aff90dda378c09bea075af0d9c675fe3a977a9d2402f95a87f440f59f619" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9ff/0f4f29c51e280/numpy-1.26.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:9ff0f4f29c51e2803569d7a51c2304de5554655a60c5d776e35b4a41413830d0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2e4/ee3380d6de9c9/numpy-1.26.4-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:2e4ee3380d6de9c9ec04745830fd9e2eccb3e6cf790d39d7b98ffd19b0dd754a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d20/9d8969599b27a/numpy-1.26.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d209d8969599b27ad20994c8e41936ee0964e6da07478d6c35016bc386b66ad4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ffa/75af20b44f8db/numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/62b/8e4b1e28009ef/numpy-1.26.4-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:62b8e4b1e28009ef2846b4c7852046736bab361f7aeadeb6a5b89ebec3c7055a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a4a/bb4f9001ad285/numpy-1.26.4-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:a4abb4f9001ad2858e7ac189089c42178fcce737e4169dc61321660f1a96c7d2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bfe/25acf8b437eb2/numpy-1.26.4-cp310-cp310-win32.whl", hash = "sha256:bfe25acf8b437eb2a8b2d49d443800a5f18508cd811fea3181723922a8a82b07" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b97/fe8060236edf3/numpy-1.26.4-cp310-cp310-win_amd64.whl", hash = "sha256:b97fe8060236edf3662adfc2c633f56a08ae30560c56310562cb4f95500022d5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c6/6707fabe11443/numpy-1.26.4-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:4c66707fabe114439db9068ee468c26bbdf909cac0fb58686a42a24de1760c71" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/edd/8b5fe47dab091/numpy-1.26.4-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:edd8b5fe47dab091176d21bb6de568acdd906d1887a4584a15a9a96a1dca06ef" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7ab/55401287bfec9/numpy-1.26.4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7ab55401287bfec946ced39700c053796e7cc0e3acbef09993a9ad2adba6ca6e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/666/dbfb6ec68962c/numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:666dbfb6ec68962c033a450943ded891bed2d54e6755e35e5835d63f4f6931d5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/96f/f0b2ad353d8f9/numpy-1.26.4-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:96ff0b2ad353d8f990b63294c8986f1ec3cb19d749234014f4e7eb0112ceba5a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/60d/edbb91afcbfdc/numpy-1.26.4-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:60dedbb91afcbfdc9bc0b1f3f402804070deed7392c23eb7a7f07fa857868e8a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1af/303d6b2210eb8/numpy-1.26.4-cp311-cp311-win32.whl", hash = "sha256:1af303d6b2210eb850fcf03064d364652b7120803a0b872f5211f5234b399f20" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cd2/5bcecc4974d09/numpy-1.26.4-cp311-cp311-win_amd64.whl", hash = "sha256:cd25bcecc4974d09257ffcd1f098ee778f7834c3ad767fe5db785be9a4aa9cb2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b3c/e300f3644fb06/numpy-1.26.4-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:b3ce300f3644fb06443ee2222c2201dd3a89ea6040541412b8fa189341847218" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/03a/8c78d01d9781b/numpy-1.26.4-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:03a8c78d01d9781b28a6989f6fa1bb2c4f2d51201cf99d3dd875df6fbd96b23b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9fa/d7dcb1aac3c7f/numpy-1.26.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9fad7dcb1aac3c7f0584a5a8133e3a43eeb2fe127f47e3632d43d677c66c102b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/675/d61ffbfa78604/numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:675d61ffbfa78604709862923189bad94014bef562cc35cf61d3a07bba02a7ed" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ab4/7dbe5cc8210f5/numpy-1.26.4-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:ab47dbe5cc8210f55aa58e4805fe224dac469cde56b9f731a4c098b91917159a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1dd/a2e7b4ec9dd51/numpy-1.26.4-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:1dda2e7b4ec9dd512f84935c5f126c8bd8b9f2fc001e9f54af255e8c5f16b0e0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/501/93e430acfc134/numpy-1.26.4-cp312-cp312-win32.whl", hash = "sha256:50193e430acfc1346175fcbdaa28ffec49947a06918b7b92130744e81e640110" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/08b/eddf13648eb95/numpy-1.26.4-cp312-cp312-win_amd64.whl", hash = "sha256:08beddf13648eb95f8d867350f6a018a4be2e5ad54c8d8caed89ebca558b2818" },
 ]
 
 [[package]]
@@ -540,6 +825,155 @@ source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
 sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d44/3872c98d677bf/packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f" }
 wheels = [
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/295/72ef2b1f17581/packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484" },
+]
+
+[[package]]
+name = "pillow"
+version = "11.3.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/382/8ee7586cd0b20/pillow-11.3.0.tar.gz", hash = "sha256:3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1b9/c17fd4ace828b/pillow-11.3.0-cp310-cp310-macosx_10_10_x86_64.whl", hash = "sha256:1b9c17fd4ace828b3003dfd1e30bff24863e0eb59b535e8f80194d9cc7ecf860" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/65d/c69160114cdd0/pillow-11.3.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:65dc69160114cdd0ca0f35cb434633c75e8e7fad4cf855177a05bf38678f73ad" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/710/7195ddc914f65/pillow-11.3.0-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:7107195ddc914f656c7fc8e4a5e1c25f32e9236ea3ea860f257b0436011fddd0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cc3/e831b563b3114/pillow-11.3.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:cc3e831b563b3114baac7ec2ee86819eb03caa1a2cef0b481a5675b59c4fe23b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f1f/182ebd2303acf/pillow-11.3.0-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:f1f182ebd2303acf8c380a54f615ec883322593320a9b00438eb842c1f37ae50" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/444/5fa62e15936a0/pillow-11.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4445fa62e15936a028672fd48c4c11a66d641d2c05726c7ec1f8ba6a572036ae" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/71f/511f6b3b91dd5/pillow-11.3.0-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:71f511f6b3b91dd543282477be45a033e4845a40278fa8dcdbfdb07109bf18f9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/040/a5b691b0713e1/pillow-11.3.0-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:040a5b691b0713e1f6cbe222e0f4f74cd233421e105850ae3b3c0ceda520f42e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/89b/d777bc6624fe4/pillow-11.3.0-cp310-cp310-win32.whl", hash = "sha256:89bd777bc6624fe4115e9fac3352c79ed60f3bb18651420635f26e643e3dd1f6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/19d/2ff547c75b8e3/pillow-11.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:19d2ff547c75b8e3ff46f4d9ef969a06c30ab2d4263a9e287733aa8b2429ce8f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/819/931d25e57b513/pillow-11.3.0-cp310-cp310-win_arm64.whl", hash = "sha256:819931d25e57b513242859ce1876c58c59dc31587847bf74cfe06b2e0cb22d2f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1cd/110edf8227733/pillow-11.3.0-cp311-cp311-macosx_10_10_x86_64.whl", hash = "sha256:1cd110edf822773368b396281a2293aeb91c90a2db00d78ea43e7e861631b722" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9c4/12fddd1b77a75/pillow-11.3.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:9c412fddd1b77a75aa904615ebaa6001f169b26fd467b4be93aded278266b288" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7d1/aa4de119a0eca/pillow-11.3.0-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:7d1aa4de119a0ecac0a34a9c8bde33f34022e2e8f99104e47a3ca392fd60e37d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/91d/a1d8822666359/pillow-11.3.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:91da1d88226663594e3f6b4b8c3c8d85bd504117d043740a8e0ec449087cc494" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/643/f189248837533/pillow-11.3.0-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:643f189248837533073c405ec2f0bb250ba54598cf80e8c1e043381a60632f58" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/106/064daa23a7455/pillow-11.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:106064daa23a745510dabce1d84f29137a37224831d88eb4ce94bb187b1d7e5f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cd8/ff254faf15591/pillow-11.3.0-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:cd8ff254faf15591e724dc7c4ddb6bf4793efcbe13802a4ae3e863cd300b493e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/932/c754c2d51ad2b/pillow-11.3.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:932c754c2d51ad2b2271fd01c3d121daaa35e27efae2a616f77bf164bc0b3e94" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b4b/8f3efc8d530a1/pillow-11.3.0-cp311-cp311-win32.whl", hash = "sha256:b4b8f3efc8d530a1544e5962bd6b403d5f7fe8b9e08227c6b255f98ad82b4ba0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1a9/92e86b0dd7aeb/pillow-11.3.0-cp311-cp311-win_amd64.whl", hash = "sha256:1a992e86b0dd7aeb1f053cd506508c0999d710a8f07b4c791c63843fc6a807ac" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/308/07c931ff7c095/pillow-11.3.0-cp311-cp311-win_arm64.whl", hash = "sha256:30807c931ff7c095620fe04448e2c2fc673fcbb1ffe2a7da3fb39613489b1ddd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fda/e223722da47b0/pillow-11.3.0-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:fdae223722da47b024b867c1ea0be64e0df702c5e0a60e27daad39bf960dd1e4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/921/bd305b10e82b4/pillow-11.3.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:921bd305b10e82b4d1f5e802b6850677f965d8394203d182f078873851dada69" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/eb7/6541cba2f9580/pillow-11.3.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:eb76541cba2f958032d79d143b98a3a6b3ea87f0959bbe256c0b5e416599fd5d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/671/72f2944ebba3d/pillow-11.3.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:67172f2944ebba3d4a7b54f2e95c786a3a50c21b88456329314caaa28cda70f6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/97f/07ed9f56a3b9b/pillow-11.3.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:97f07ed9f56a3b9b5f49d3661dc9607484e85c67e27f3e8be2c7d28ca032fec7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/676/b2815362456b5/pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:676b2815362456b5b3216b4fd5bd89d362100dc6f4945154ff172e206a22c024" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3e1/84b2f26ff1463/pillow-11.3.0-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:3e184b2f26ff146363dd07bde8b711833d7b0202e27d13540bfe2e35a323a809" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6be/31e3fc9a621e0/pillow-11.3.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:6be31e3fc9a621e071bc17bb7de63b85cbe0bfae91bb0363c893cbe67247780d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7b1/61756381f0918/pillow-11.3.0-cp312-cp312-win32.whl", hash = "sha256:7b161756381f0918e05e7cb8a371fff367e807770f8fe92ecb20d905d0e1c149" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a64/44696fce63578/pillow-11.3.0-cp312-cp312-win_amd64.whl", hash = "sha256:a6444696fce635783440b7f7a9fc24b3ad10a9ea3f0ab66c5905be1c19ccf17d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2ac/eea54f957dd44/pillow-11.3.0-cp312-cp312-win_arm64.whl", hash = "sha256:2aceea54f957dd4448264f9bf40875da0415c83eb85f55069d89c0ed436e3542" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1c6/27742b539bba4/pillow-11.3.0-cp313-cp313-ios_13_0_arm64_iphoneos.whl", hash = "sha256:1c627742b539bba4309df89171356fcb3cc5a9178355b2727d1b74a6cf155fbd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/30b/7c02f3899d10f/pillow-11.3.0-cp313-cp313-ios_13_0_arm64_iphonesimulator.whl", hash = "sha256:30b7c02f3899d10f13d7a48163c8969e4e653f8b43416d23d13d1bbfdc93b9f8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/785/9a4cc7c9295f5/pillow-11.3.0-cp313-cp313-ios_13_0_x86_64_iphonesimulator.whl", hash = "sha256:7859a4cc7c9295f5838015d8cc0a9c215b77e43d07a25e460f35cf516df8626f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ec1/ee50470b0d050/pillow-11.3.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:ec1ee50470b0d050984394423d96325b744d55c701a439d2bd66089bff963d3c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7db/51d222548ccfd/pillow-11.3.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:7db51d222548ccfd274e4572fdbf3e810a5e66b00608862f947b163e613b67dd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2d6/fcc902a24ac74/pillow-11.3.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:2d6fcc902a24ac74495df63faad1884282239265c6839a0a6416d33faedfae7e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0f/5d8f4a08090c6/pillow-11.3.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f0f5d8f4a08090c6d6d578351a2b91acf519a54986c055af27e7a93feae6d3f1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c37/d8ba9411d6003/pillow-11.3.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:c37d8ba9411d6003bba9e518db0db0c58a680ab9fe5179f040b0463644bc9805" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/13f/87d581e71d918/pillow-11.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:13f87d581e71d9189ab21fe0efb5a23e9f28552d5be6979e84001d3b8505abe8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/023/f6d2d11784a46/pillow-11.3.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:023f6d2d11784a465f09fd09a34b150ea4672e85fb3d05931d89f373ab14abb2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/45d/fc51ac5975b93/pillow-11.3.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:45dfc51ac5975b938e9809451c51734124e73b04d0f0ac621649821a63852e7b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a4d/336baed65d50d/pillow-11.3.0-cp313-cp313-win32.whl", hash = "sha256:a4d336baed65d50d37b88ca5b60c0fa9d81e3a87d4a7930d3880d1624d5b31f3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0bc/e5c4fd0921f99/pillow-11.3.0-cp313-cp313-win_amd64.whl", hash = "sha256:0bce5c4fd0921f99d2e858dc4d4d64193407e1b99478bc5cacecba2311abde51" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/190/4e1264881f682/pillow-11.3.0-cp313-cp313-win_arm64.whl", hash = "sha256:1904e1264881f682f02b7f8167935cce37bc97db457f8e7849dc3a6a52b99580" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c8/34a3921375c48/pillow-11.3.0-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:4c834a3921375c48ee6b9624061076bc0a32a60b5532b322cc0ea64e639dd50e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5e0/5688ccef30ea6/pillow-11.3.0-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:5e05688ccef30ea69b9317a9ead994b93975104a677a36a8ed8106be9260aa6d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/101/9b04af07fc016/pillow-11.3.0-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:1019b04af07fc0163e2810167918cb5add8d74674b6267616021ab558dc98ced" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f94/4255db153ebb2/pillow-11.3.0-cp313-cp313t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f944255db153ebb2b19c51fe85dd99ef0ce494123f21b9db4877ffdfc5590c7c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1f8/5acb69adf2aae/pillow-11.3.0-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1f85acb69adf2aaee8b7da124efebbdb959a104db34d3a2cb0f3793dbae422a8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/05f/6ecbeff500539/pillow-11.3.0-cp313-cp313t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:05f6ecbeff5005399bb48d198f098a9b4b6bdf27b8487c7f38ca16eeb070cd59" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a7b/c6e6fd0395bc0/pillow-11.3.0-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:a7bc6e6fd0395bc052f16b1a8670859964dbd7003bd0af2ff08342eb6e442cfe" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/83e/1b0161c9d1481/pillow-11.3.0-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:83e1b0161c9d148125083a35c1c5a89db5b7054834fd4387499e06552035236c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2a3/117c06b8fb646/pillow-11.3.0-cp313-cp313t-win32.whl", hash = "sha256:2a3117c06b8fb646639dce83694f2f9eac405472713fcb1ae887469c0d4f6788" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/857/844335c95bea9/pillow-11.3.0-cp313-cp313t-win_amd64.whl", hash = "sha256:857844335c95bea93fb39e0fa2726b4d9d758850b34075a7e3ff4f4fa3aa3b31" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/879/7edc41f3e8536/pillow-11.3.0-cp313-cp313t-win_arm64.whl", hash = "sha256:8797edc41f3e8536ae4b10897ee2f637235c94f27404cac7297f7b607dd0716e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d9d/a3df5f9ea2a89/pillow-11.3.0-cp314-cp314-macosx_10_13_x86_64.whl", hash = "sha256:d9da3df5f9ea2a89b81bb6087177fb1f4d1c7146d583a3fe5c672c0d94e55e12" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0b2/75ff9b04df7b6/pillow-11.3.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:0b275ff9b04df7b640c59ec5a3cb113eefd3795a8df80bac69646ef699c6981a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/074/3841cabd3dba6/pillow-11.3.0-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:0743841cabd3dba6a83f38a92672cccbd69af56e3e91777b0ee7f4dba4385632" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/246/5a69cf967b8b4/pillow-11.3.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:2465a69cf967b8b49ee1b96d76718cd98c4e925414ead59fdf75cf0fd07df673" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/417/4263813942470/pillow-11.3.0-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:41742638139424703b4d01665b807c6468e23e699e8e90cffefe291c5832b027" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/93e/fb0b4de7e340d/pillow-11.3.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:93efb0b4de7e340d99057415c749175e24c8864302369e05914682ba642e5d77" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/796/6e38dcd0fa11c/pillow-11.3.0-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:7966e38dcd0fa11ca390aed7c6f20454443581d758242023cf36fcb319b1a874" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/98a/9afa7b9007c67/pillow-11.3.0-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:98a9afa7b9007c67ed84c57c9e0ad86a6000da96eaa638e4f8abe5b65ff83f0a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/02a/723e6bf909e7c/pillow-11.3.0-cp314-cp314-win32.whl", hash = "sha256:02a723e6bf909e7cea0dac1b0e0310be9d7650cd66222a5f1c571455c0a45214" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a41/8486160228f64/pillow-11.3.0-cp314-cp314-win_amd64.whl", hash = "sha256:a418486160228f64dd9e9efcd132679b7a02a5f22c982c78b6fc7dab3fefb635" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/155/658efb5e04466/pillow-11.3.0-cp314-cp314-win_arm64.whl", hash = "sha256:155658efb5e044669c08896c0c44231c5e9abcaadbc5cd3648df2f7c0b96b9a6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/59a/03cdf019efbfe/pillow-11.3.0-cp314-cp314t-macosx_10_13_x86_64.whl", hash = "sha256:59a03cdf019efbfeeed910bf79c7c93255c3d54bc45898ac2a4140071b02b4ae" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f8a/5827f84d973d8/pillow-11.3.0-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:f8a5827f84d973d8636e9dc5764af4f0cf2318d26744b3d902931701b0d46653" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ee9/2f2fd10f4adc4/pillow-11.3.0-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:ee92f2fd10f4adc4b43d07ec5e779932b4eb3dbfbc34790ada5a6669bc095aa6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c96/d333dcf42d01f/pillow-11.3.0-cp314-cp314t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:c96d333dcf42d01f47b37e0979b6bd73ec91eae18614864622d9b87bbd5bbf36" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c9/6f993ab8c9846/pillow-11.3.0-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:4c96f993ab8c98460cd0c001447bff6194403e8b1d7e149ade5f00594918128b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/413/42b64afeba938/pillow-11.3.0-cp314-cp314t-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:41342b64afeba938edb034d122b2dda5db2139b9a4af999729ba8818e0056477" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/068/d9c39a2d1b358/pillow-11.3.0-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:068d9c39a2d1b358eb9f245ce7ab1b5c3246c7c8c7d9ba58cfa5b43146c06e50" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a1b/c6ba083b14518/pillow-11.3.0-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:a1bc6ba083b145187f648b667e05a2534ecc4b9f2784c2cbe3089e44868f2b9b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/118/ca10c0d60b06d/pillow-11.3.0-cp314-cp314t-win32.whl", hash = "sha256:118ca10c0d60b06d006be10a501fd6bbdfef559251ed31b794668ed569c87e12" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/892/4748b688aa210/pillow-11.3.0-cp314-cp314t-win_amd64.whl", hash = "sha256:8924748b688aa210d79883357d102cd64690e56b923a186f35a82cbc10f997db" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/79e/a0d14d3ebad43/pillow-11.3.0-cp314-cp314t-win_arm64.whl", hash = "sha256:79ea0d14d3ebad43ec77ad5272e6ff9bba5b679ef73375ea760261207fa8e0aa" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3ce/e80663f29e384/pillow-11.3.0-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:3cee80663f29e3843b68199b9d6f4f54bd1d4a6b59bdd91bceefc51238bcb967" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b5f/56c3f344f2cca/pillow-11.3.0-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:b5f56c3f344f2ccaf0dd875d3e180f631dc60a51b314295a3e681fe8cf851fbe" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e67/d793d180c9df6/pillow-11.3.0-pp310-pypy310_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:e67d793d180c9df62f1f40aee3accca4829d3794c95098887edc18af4b8b780c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d00/0f46e2917c705/pillow-11.3.0-pp310-pypy310_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:d000f46e2917c705e9fb93a3606ee4a819d1e3aa7a9b442f6444f07e77cf5e25" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/527/b37216b6ac3a1/pillow-11.3.0-pp310-pypy310_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:527b37216b6ac3a12d7838dc3bd75208ec57c1c6d11ef01902266a5a0c14fc27" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/be5/463ac478b623b/pillow-11.3.0-pp310-pypy310_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:be5463ac478b623b9dd3937afd7fb7ab3d79dd290a28e2b6df292dc75063eb8a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8dc/70ca24c110503/pillow-11.3.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:8dc70ca24c110503e16918a658b869019126ecfe03109b754c402daff12b3d9f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7c8/ec7a017ad1bd5/pillow-11.3.0-pp311-pypy311_pp73-macosx_10_15_x86_64.whl", hash = "sha256:7c8ec7a017ad1bd562f93dbd8505763e688d388cde6e4a010ae1486916e713e6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9ab/6ae226de48019/pillow-11.3.0-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:9ab6ae226de48019caa8074894544af5b53a117ccb9d3b3dcb2871464c829438" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fe2/7fb049cdcca11/pillow-11.3.0-pp311-pypy311_pp73-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:fe27fb049cdcca11f11a7bfda64043c37b30e6b91f10cb5bab275806c32f6ab3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/465/b9e8844e3c351/pillow-11.3.0-pp311-pypy311_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:465b9e8844e3c3519a983d58b80be3f668e2a7a5db97f2784e7079fbc9f9822c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/541/8b53c0d59b382/pillow-11.3.0-pp311-pypy311_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:5418b53c0d59b3824d05e029669efa023bbef0f3e92e75ec8428f3799487f361" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/504/b6f59505f08ae/pillow-11.3.0-pp311-pypy311_pp73-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:504b6f59505f08ae014f724b6207ff6222662aab5cc9542577fb084ed0676ac7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c84/d689db21a1c39/pillow-11.3.0-pp311-pypy311_pp73-win_amd64.whl", hash = "sha256:c84d689db21a1c397d001aa08241044aa2069e7587b398c8cc63020390b1c1b8" },
+]
+
+[[package]]
+name = "platformdirs"
+version = "4.3.8"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3d5/12d96e16bcb95/platformdirs-4.3.8.tar.gz", hash = "sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ff7/059bb7eb1179e/platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4" },
+]
+
+[[package]]
+name = "pooch"
+version = "1.8.2"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "packaging" },
+    { name = "platformdirs" },
+    { name = "requests" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/765/61f0de68a01da/pooch-1.8.2.tar.gz", hash = "sha256:76561f0de68a01da4df6af38e9955c4c9d1a5c90da73f7e40276a5728ec83d10" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/352/9a57096f71987/pooch-1.8.2-py3-none-any.whl", hash = "sha256:3529a57096f7198778a5ceefd5ac3ef0e4d06a6ddaf9fc2d609b806f25302c47" },
+]
+
+[[package]]
+name = "psutil"
+version = "7.0.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7be/9c3eba38beccb/psutil-7.0.0.tar.gz", hash = "sha256:7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/101/d71dc322e3cff/psutil-7.0.0-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:101d71dc322e3cffd7cea0650b09b3d08b8e7c4109dd6809fe452dfd00e58b25" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/39d/b632f6bb862ee/psutil-7.0.0-cp36-abi3-macosx_11_0_arm64.whl", hash = "sha256:39db632f6bb862eeccf56660871433e111b6ea58f2caea825571951d4b6aa3da" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1fc/ee592b4c6f146/psutil-7.0.0-cp36-abi3-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1fcee592b4c6f146991ca55919ea3d1f8926497a713ed7faaf8225e174581e91" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4b1/388a4f6875d7e/psutil-7.0.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4b1388a4f6875d7e2aff5c4ca1cc16c545ed41dd8bb596cefea80111db353a34" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a5f/098451abc2828/psutil-7.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a5f098451abc2828f7dc6b58d44b532b22f2088f4999a937557b603ce72b1993" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ba3/fcef7523064a6/psutil-7.0.0-cp37-abi3-win32.whl", hash = "sha256:ba3fcef7523064a6c9da440fc4d6bd07da93ac726b5733c29027d7dc95b39d99" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4cf/3d4eb1aa9b348/psutil-7.0.0-cp37-abi3-win_amd64.whl", hash = "sha256:4cf3d4eb1aa9b348dec30105c55cd9b7d4629285735a102beb4441e38db90553" },
+]
+
+[[package]]
+name = "pycountry"
+version = "24.6.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b61/b3faccea67f87/pycountry-24.6.1.tar.gz", hash = "sha256:b61b3faccea67f87d10c1f2b0fc0be714409e8fcdcc1315613174f6466c10221" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f1a/4fb391cd7214f/pycountry-24.6.1-py3-none-any.whl", hash = "sha256:f1a4fb391cd7214f8eefd39556d740adcc233c778a27f8942c8dca351d6ce06f" },
 ]
 
 [[package]]
@@ -689,6 +1123,24 @@ wheels = [
 ]
 
 [[package]]
+name = "pydantic-extra-types"
+version = "2.10.5"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1dc/fa2c0cf741a42/pydantic_extra_types-2.10.5.tar.gz", hash = "sha256:1dcfa2c0cf741a422f088e0dbb4690e7bfadaaf050da3d6f80d6c3cf58a2bad8" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b60/c4e23d573a69a/pydantic_extra_types-2.10.5-py3-none-any.whl", hash = "sha256:b60c4e23d573a69a4f1a16dd92888ecc0ef34fb0e655b4f305530377fa70e7a8" },
+]
+
+[package.optional-dependencies]
+pycountry = [
+    { name = "pycountry" },
+]
+
+[[package]]
 name = "pydantic-settings"
 version = "2.10.1"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
@@ -765,6 +1217,20 @@ wheels = [
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/68c/cc6023a340087/PyYAML-6.0.2-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:68ccc6023a3400877818152ad9a1033e3db8625d899c72eacb5a668902e4d652" },
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bc2/fa7c6b47d6bc6/PyYAML-6.0.2-cp313-cp313-win32.whl", hash = "sha256:bc2fa7c6b47d6bc618dd7fb02ef6fdedb1090ec036abab80d4681424b84c1183" },
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/838/8ee1976c41673/PyYAML-6.0.2-cp313-cp313-win_amd64.whl", hash = "sha256:8388ee1976c416731879ac16da0aff3f63b286ffdd57cdeb95f3f2e085687563" },
+]
+
+[[package]]
+name = "referencing"
+version = "0.36.2"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "rpds-py" },
+    { name = "typing-extensions", marker = "python_full_version < '3.13'" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/df2/e89862cd09dea/referencing-0.36.2.tar.gz", hash = "sha256:df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e86/99adbbf8b5c7d/referencing-0.36.2-py3-none-any.whl", hash = "sha256:e8699adbbf8b5c7de96d8ffa0eb5c158b3beafce084968e2ea8bb08c6794dcd0" },
 ]
 
 [[package]]
@@ -862,6 +1328,132 @@ wheels = [
 ]
 
 [[package]]
+name = "rpds-py"
+version = "0.26.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/20d/ae58a859b0906/rpds_py-0.26.0.tar.gz", hash = "sha256:20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c7/0c70f9169692b/rpds_py-0.26.0-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:4c70c70f9169692b36307a95f3d8c0a9fcd79f7b4a383aad5eaa0e9718b79b37" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/777/c62479d12395b/rpds_py-0.26.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:777c62479d12395bfb932944e61e915741e364c843afc3196b694db3d669fcd0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ec6/71691e72dff75/rpds_py-0.26.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ec671691e72dff75817386aa02d81e708b5a7ec0dec6669ec05213ff6b77e1bd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6a1/cb5d6ce813794/rpds_py-0.26.0-cp310-cp310-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:6a1cb5d6ce81379401bbb7f6dbe3d56de537fb8235979843f0d53bc2e9815a79" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4f7/89e32fa1fb6a7/rpds_py-0.26.0-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:4f789e32fa1fb6a7bf890e0124e7b42d1e60d28ebff57fe806719abb75f0e9a3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9c5/5b0a669976cf2/rpds_py-0.26.0-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:9c55b0a669976cf258afd718de3d9ad1b7d1fe0a91cd1ab36f38b03d4d4aeaaf" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c70/d9ec912802ecf/rpds_py-0.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c70d9ec912802ecfd6cd390dadb34a9578b04f9bcb8e863d0a7598ba5e9e7ccc" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/302/1933c2cb7def3/rpds_py-0.26.0-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:3021933c2cb7def39d927b9862292e0f4c75a13d7de70eb0ab06efed4c508c19" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8a7/898b6ca3b7d66/rpds_py-0.26.0-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:8a7898b6ca3b7d6659e55cdac825a2e58c638cbf335cde41f4619e290dd0ad11" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/12b/ff2ad94471883/rpds_py-0.26.0-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:12bff2ad9447188377f1b2794772f91fe68bb4bbfa5a39d7941fbebdbf8c500f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/191/aa858f7d4902e/rpds_py-0.26.0-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:191aa858f7d4902e975d4cf2f2d9243816c91e9605070aeb09c0a800d187e323" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b37/a04d9f52cb76b/rpds_py-0.26.0-cp310-cp310-win32.whl", hash = "sha256:b37a04d9f52cb76b6b78f35109b513f6519efb481d8ca4c321f6a3b9580b3f45" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/387/21d4c9edd3eb6/rpds_py-0.26.0-cp310-cp310-win_amd64.whl", hash = "sha256:38721d4c9edd3eb6670437d8d5e2070063f305bfa2d5aa4278c51cedcd508a84" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9e8/cb77286025bdb/rpds_py-0.26.0-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:9e8cb77286025bdb21be2941d64ac6ca016130bfdcd228739e8ab137eb4406ed" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5e0/9330b21d98adc/rpds_py-0.26.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:5e09330b21d98adc8ccb2dbb9fc6cb434e8908d4c119aeaa772cb1caab5440a0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2c9/c1b92b774b2e6/rpds_py-0.26.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2c9c1b92b774b2e68d11193dc39620d62fd8ab33f0a3c77ecdabe19c179cdbc1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/824/e6d3503ab990d/rpds_py-0.26.0-cp311-cp311-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:824e6d3503ab990d7090768e4dfd9e840837bae057f212ff9f4f05ec6d1975e7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8ad/7fd2258228bf2/rpds_py-0.26.0-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:8ad7fd2258228bf288f2331f0a6148ad0186b2e3643055ed0db30990e59817a6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0dc/23bbb3e06ec1e/rpds_py-0.26.0-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:0dc23bbb3e06ec1ea72d515fb572c1fea59695aefbffb106501138762e1e915e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d80/bf832ac7b1920/rpds_py-0.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d80bf832ac7b1920ee29a426cdca335f96a2b5caa839811803e999b41ba9030d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/091/9f38f5542c0a8/rpds_py-0.26.0-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:0919f38f5542c0a87e7b4afcafab6fd2c15386632d249e9a087498571250abe3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d42/2b945683e4090/rpds_py-0.26.0-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:d422b945683e409000c888e384546dbab9009bb92f7c0b456e217988cf316107" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/77a/7711fa562ba2d/rpds_py-0.26.0-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:77a7711fa562ba2da1aa757e11024ad6d93bad6ad7ede5afb9af144623e5f76a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/238/e8c8610cb7c29/rpds_py-0.26.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:238e8c8610cb7c29460e37184f6799547f7e09e6a9bdbdab4e8edb90986a2318" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/893/b022bfbdf26d7/rpds_py-0.26.0-cp311-cp311-win32.whl", hash = "sha256:893b022bfbdf26d7bedb083efeea624e8550ca6eb98bf7fea30211ce95b9201a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/87a/5531de9f71ace/rpds_py-0.26.0-cp311-cp311-win_amd64.whl", hash = "sha256:87a5531de9f71aceb8af041d72fc4cab4943648d91875ed56d2e629bef6d4c03" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/de2/713f48c1ad57f/rpds_py-0.26.0-cp311-cp311-win_arm64.whl", hash = "sha256:de2713f48c1ad57f89ac25b3cb7daed2156d8e822cf0eca9b96a6f990718cc41" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/894/514d47e012e79/rpds_py-0.26.0-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:894514d47e012e794f1350f076c427d2347ebf82f9b958d554d12819849a369d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fc9/21b96fa95a097/rpds_py-0.26.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:fc921b96fa95a097add244da36a1d9e4f3039160d1d30f1b35837bf108c21136" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3e1/157659470aa42/rpds_py-0.26.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3e1157659470aa42a75448b6e943c895be8c70531c43cb78b9ba990778955582" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/521/ccf56f45bb3a7/rpds_py-0.26.0-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:521ccf56f45bb3a791182dc6b88ae5f8fa079dd705ee42138c76deb1238e554e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9de/f736773fd56b3/rpds_py-0.26.0-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:9def736773fd56b305c0eef698be5192c77bfa30d55a0e5885f80126c4831a15" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cda/d4ea3b4513b47/rpds_py-0.26.0-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:cdad4ea3b4513b475e027be79e5a0ceac8ee1c113a1a11e5edc3c30c29f964d8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/82b/165b07f416bdc/rpds_py-0.26.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:82b165b07f416bdccf5c84546a484cc8f15137ca38325403864bfdf2b5b72f6a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d04/cab0a54b9dba4/rpds_py-0.26.0-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:d04cab0a54b9dba4d278fe955a1390da3cf71f57feb78ddc7cb67cbe0bd30323" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/790/61ba1a11b6a12/rpds_py-0.26.0-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:79061ba1a11b6a12743a2b0f72a46aa2758613d454aa6ba4f5a265cc48850158" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f40/5c93675d8d4c5/rpds_py-0.26.0-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:f405c93675d8d4c5ac87364bb38d06c988e11028a64b52a47158a355079661f3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/daf/d4c44b74aa4be/rpds_py-0.26.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:dafd4c44b74aa4bed4b250f1aed165b8ef5de743bcca3b88fc9619b6087093d2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3da/5852aad63fa0c/rpds_py-0.26.0-cp312-cp312-win32.whl", hash = "sha256:3da5852aad63fa0c6f836f3359647870e21ea96cf433eb393ffa45263a170d44" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cf4/7cfdabc2194a6/rpds_py-0.26.0-cp312-cp312-win_amd64.whl", hash = "sha256:cf47cfdabc2194a669dcf7a8dbba62e37a04c5041d2125fae0233b720da6f05c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/20a/b1ae4fa534f73/rpds_py-0.26.0-cp312-cp312-win_arm64.whl", hash = "sha256:20ab1ae4fa534f73647aad289003f1104092890849e0266271351922ed5574f8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/696/764a5be111b03/rpds_py-0.26.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:696764a5be111b036256c0b18cd29783fab22154690fc698062fc1b0084b511d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1e6/c15d2080a63aa/rpds_py-0.26.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:1e6c15d2080a63aaed876e228efe4f814bc7889c63b1e112ad46fdc8b368b9e1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/390/e3170babf4246/rpds_py-0.26.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:390e3170babf42462739a93321e657444f0862c6d722a291accc46f9d21ed04e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7da/84c2c74c0f5bc/rpds_py-0.26.0-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:7da84c2c74c0f5bc97d853d9e17bb83e2dcafcff0dc48286916001cc114379a1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c5/fe114a6dd480a/rpds_py-0.26.0-cp313-cp313-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:4c5fe114a6dd480a510b6d3661d09d67d1622c4bf20660a474507aaee7eeeee9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/310/0b3090269f3a7/rpds_py-0.26.0-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:3100b3090269f3a7ea727b06a6080d4eb7439dca4c0e91a07c5d133bb1727ea7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2c0/3c9b0c64afd03/rpds_py-0.26.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2c03c9b0c64afd0320ae57de4c982801271c0c211aa2d37f3003ff5feb75bb04" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/596/3b72ccd199ade/rpds_py-0.26.0-cp313-cp313-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:5963b72ccd199ade6ee493723d18a3f21ba7d5b957017607f815788cef50eaf1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9da/4e873860ad5ba/rpds_py-0.26.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:9da4e873860ad5bab3291438525cae80169daecbfafe5657f7f5fb4d6b3f96b9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5af/addaa8e8c7f1f/rpds_py-0.26.0-cp313-cp313-musllinux_1_2_i686.whl", hash = "sha256:5afaddaa8e8c7f1f7b4c5c725c0070b6eed0228f705b90a1732a48e84350f4e9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/491/6dc96489616a6/rpds_py-0.26.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:4916dc96489616a6f9667e7526af8fa693c0fdb4f3acb0e5d9f4400eb06a47ba" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2a3/43f91b17097c5/rpds_py-0.26.0-cp313-cp313-win32.whl", hash = "sha256:2a343f91b17097c546b93f7999976fd6c9d5900617aa848c81d794e062ab302b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0a0/b60701f2300c8/rpds_py-0.26.0-cp313-cp313-win_amd64.whl", hash = "sha256:0a0b60701f2300c81b2ac88a5fb893ccfa408e1c4a555a77f908a2596eb875a5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/257/d011919f133a4/rpds_py-0.26.0-cp313-cp313-win_arm64.whl", hash = "sha256:257d011919f133a4746958257f2c75238e3ff54255acd5e3e11f3ff41fd14256" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/529/c8156d7506fba/rpds_py-0.26.0-cp313-cp313t-macosx_10_12_x86_64.whl", hash = "sha256:529c8156d7506fba5740e05da8795688f87119cce330c244519cf706a4a3d618" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f53/ec51f9d24e963/rpds_py-0.26.0-cp313-cp313t-macosx_11_0_arm64.whl", hash = "sha256:f53ec51f9d24e9638a40cabb95078ade8c99251945dad8d57bf4aabe86ecee35" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7ab/504c4d654e4a2/rpds_py-0.26.0-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7ab504c4d654e4a29558eaa5bb8cea5fdc1703ea60a8099ffd9c758472cf913f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fd0/641abca296bc1/rpds_py-0.26.0-cp313-cp313t-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:fd0641abca296bc1a00183fe44f7fced8807ed49d501f188faa642d0e4975b83" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/69b/312fecc1d017b/rpds_py-0.26.0-cp313-cp313t-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:69b312fecc1d017b5327afa81d4da1480f51c68810963a7336d92203dbb3d4f1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c74/1107203954f6f/rpds_py-0.26.0-cp313-cp313t-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:c741107203954f6fc34d3066d213d0a0c40f7bb5aafd698fb39888af277c70d8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fc3/e55a7db08dc9a/rpds_py-0.26.0-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fc3e55a7db08dc9a6ed5fb7103019d2c1a38a349ac41901f9f66d7f95750942f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9e8/51920caab2dbc/rpds_py-0.26.0-cp313-cp313t-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:9e851920caab2dbcae311fd28f4313c6953993893eb5c1bb367ec69d9a39e7ed" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/dfb/f280da5f876d0/rpds_py-0.26.0-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:dfbf280da5f876d0b00c81f26bedce274e72a678c28845453885a9b3c22ae632" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1cc/81d14ddfa53d7/rpds_py-0.26.0-cp313-cp313t-musllinux_1_2_i686.whl", hash = "sha256:1cc81d14ddfa53d7f3906694d35d54d9d3f850ef8e4e99ee68bc0d1e5fed9a9c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/dca/83c498b4650a9/rpds_py-0.26.0-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:dca83c498b4650a91efcf7b88d669b170256bf8017a5db6f3e06c2bf031f57e0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4d1/1382bcaf12f80/rpds_py-0.26.0-cp313-cp313t-win32.whl", hash = "sha256:4d11382bcaf12f80b51d790dee295c56a159633a8e81e6323b16e55d81ae37e9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ff1/10acded3c22c0/rpds_py-0.26.0-cp313-cp313t-win_amd64.whl", hash = "sha256:ff110acded3c22c033e637dd8896e411c7d3a11289b2edf041f86663dbc791e9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/da6/19979df60a940/rpds_py-0.26.0-cp314-cp314-macosx_10_12_x86_64.whl", hash = "sha256:da619979df60a940cd434084355c514c25cf8eb4cf9a508510682f6c851a4f7a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ea8/9a2458a1a75f8/rpds_py-0.26.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:ea89a2458a1a75f87caabefe789c87539ea4e43b40f18cff526052e35bbb4fdf" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fea/c1045b3327a45/rpds_py-0.26.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:feac1045b3327a45944e7dcbeb57530339f6b17baff154df51ef8b0da34c8c12" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b81/8a592bd69bfe4/rpds_py-0.26.0-cp314-cp314-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:b818a592bd69bfe437ee8368603d4a2d928c34cffcdf77c2e761a759ffd17d20" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1a8/b0dd8648709b6/rpds_py-0.26.0-cp314-cp314-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:1a8b0dd8648709b62d9372fc00a57466f5fdeefed666afe3fea5a6c9539a0331" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6d3/498ad0df07d81/rpds_py-0.26.0-cp314-cp314-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:6d3498ad0df07d81112aa6ec6c95a7e7b1ae00929fb73e7ebee0f3faaeabad2f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/24a/4146ccb15be23/rpds_py-0.26.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:24a4146ccb15be237fdef10f331c568e1b0e505f8c8c9ed5d67759dac58ac246" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a9a/63785467b2d73/rpds_py-0.26.0-cp314-cp314-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:a9a63785467b2d73635957d32a4f6e73d5e4df497a16a6392fa066b753e87387" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/de4/ed93a8c91debf/rpds_py-0.26.0-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:de4ed93a8c91debfd5a047be327b7cc8b0cc6afe32a716bbbc4aedca9e2a83af" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/caf/51943715b12af/rpds_py-0.26.0-cp314-cp314-musllinux_1_2_i686.whl", hash = "sha256:caf51943715b12af827696ec395bfa68f090a4c1a1d2509eb4e2cb69abbbdb33" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4a5/9e5bc386de021/rpds_py-0.26.0-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:4a59e5bc386de021f56337f757301b337d7ab58baa40174fb150accd480bc953" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/92c/8db839367ef16/rpds_py-0.26.0-cp314-cp314-win32.whl", hash = "sha256:92c8db839367ef16a662478f0a2fe13e15f2227da3c1430a782ad0f6ee009ec9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b0a/fb8cdd034150d/rpds_py-0.26.0-cp314-cp314-win_amd64.whl", hash = "sha256:b0afb8cdd034150d4d9f53926226ed27ad15b7f465e93d7468caaf5eafae0d37" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ca3/f059f4ba485d9/rpds_py-0.26.0-cp314-cp314-win_arm64.whl", hash = "sha256:ca3f059f4ba485d90c8dc75cb5ca897e15325e4e609812ce57f896607c1c0867" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5af/ea17ab3a12600/rpds_py-0.26.0-cp314-cp314t-macosx_10_12_x86_64.whl", hash = "sha256:5afea17ab3a126006dc2f293b14ffc7ef3c85336cf451564a0515ed7648033da" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/69f/0c0a3df7fd3a7/rpds_py-0.26.0-cp314-cp314t-macosx_11_0_arm64.whl", hash = "sha256:69f0c0a3df7fd3a7eec50a00396104bb9a843ea6d45fcc31c2d5243446ffd7a7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/801/a71f70f9813e8/rpds_py-0.26.0-cp314-cp314t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:801a71f70f9813e82d2513c9a96532551fce1e278ec0c64610992c49c04c2dad" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/df5/2098cde6d5e02/rpds_py-0.26.0-cp314-cp314t-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:df52098cde6d5e02fa75c1f6244f07971773adb4a26625edd5c18fee906fa84d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9bc/596b30f86dc6f/rpds_py-0.26.0-cp314-cp314t-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:9bc596b30f86dc6f0929499c9e574601679d0341a0108c25b9b358a042f51bca" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9df/be56b299cf587/rpds_py-0.26.0-cp314-cp314t-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:9dfbe56b299cf5875b68eb6f0ebaadc9cac520a1989cac0db0765abfb3709c19" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ac6/4f4b2bdb4ea62/rpds_py-0.26.0-cp314-cp314t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ac64f4b2bdb4ea622175c9ab7cf09444e412e22c0e02e906978b3b488af5fde8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/181/ef9b6bbf9845a/rpds_py-0.26.0-cp314-cp314t-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:181ef9b6bbf9845a264f9aa45c31836e9f3c1f13be565d0d010e964c661d1e2b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/490/28aa684c144ea/rpds_py-0.26.0-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:49028aa684c144ea502a8e847d23aed5e4c2ef7cadfa7d5eaafcb40864844b7a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e5d/524d68a474a96/rpds_py-0.26.0-cp314-cp314t-musllinux_1_2_i686.whl", hash = "sha256:e5d524d68a474a9688336045bbf76cb0def88549c1b2ad9dbfec1fb7cfbe9170" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c18/51f429b822831/rpds_py-0.26.0-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:c1851f429b822831bd2edcbe0cfd12ee9ea77868f8d3daf267b189371671c80e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7bd/b17009696214c/rpds_py-0.26.0-cp314-cp314t-win32.whl", hash = "sha256:7bdb17009696214c3b66bb3590c6d62e14ac5935e53e929bcdbc5a495987a84f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f14/440b9573a6f76/rpds_py-0.26.0-cp314-cp314t-win_amd64.whl", hash = "sha256:f14440b9573a6f76b4ee4770c13f0b5921f71dde3b6fcb8dabbefd13b7fe05d7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3c0/909c5234543ad/rpds_py-0.26.0-pp310-pypy310_pp73-macosx_10_12_x86_64.whl", hash = "sha256:3c0909c5234543ada2515c05dc08595b08d621ba919629e94427e8e03539c958" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c1f/b0cda2abcc0ac/rpds_py-0.26.0-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:c1fb0cda2abcc0ac62f64e2ea4b4e64c57dfd6b885e693095460c61bde7bb18e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/84d/142d2d6cf9b31/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:84d142d2d6cf9b31c12aa4878d82ed3b2324226270b89b676ac62ccd7df52d08" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a54/7e21c5610b7e9/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:a547e21c5610b7e9093d870be50682a6a6cf180d6da0f42c47c306073bfdbbf6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/35e/9a70a0f335371/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:35e9a70a0f335371275cdcd08bc5b8051ac494dd58bff3bbfb421038220dc871" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0df/a6115c6def379/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:0dfa6115c6def37905344d56fb54c03afc49104e2ca473d5dedec0f6606913b4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/313/cfcd6af1a55a2/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:313cfcd6af1a55a286a3c9a25f64af6d0e46cf60bc5798f1db152d97a216ff6f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f7b/f2496fa563c04/rpds_py-0.26.0-pp310-pypy310_pp73-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:f7bf2496fa563c046d05e4d232d7b7fd61346e2402052064b773e5c378bf6f73" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/aa8/1873e2c8c5aa6/rpds_py-0.26.0-pp310-pypy310_pp73-musllinux_1_2_aarch64.whl", hash = "sha256:aa81873e2c8c5aa616ab8e017a481a96742fdf9313c40f14338ca7dbf50cb55f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/68f/fcf982715f5b5/rpds_py-0.26.0-pp310-pypy310_pp73-musllinux_1_2_i686.whl", hash = "sha256:68ffcf982715f5b5b7686bdd349ff75d422e8f22551000c24b30eaa1b7f7ae84" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/618/8de70e190847b/rpds_py-0.26.0-pp310-pypy310_pp73-musllinux_1_2_x86_64.whl", hash = "sha256:6188de70e190847bb6db3dc3981cbadff87d27d6fe9b4f0e18726d55795cee9b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1c9/62145c7473723/rpds_py-0.26.0-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:1c962145c7473723df9722ba4c058de12eb5ebedcb4e27e7d902920aa3831ee8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f61/a9326f80ca592/rpds_py-0.26.0-pp311-pypy311_pp73-macosx_10_12_x86_64.whl", hash = "sha256:f61a9326f80ca59214d1cceb0a09bb2ece5b2563d4e0cd37bfd5515c28510674" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/183/f857a53bcf4b1/rpds_py-0.26.0-pp311-pypy311_pp73-macosx_11_0_arm64.whl", hash = "sha256:183f857a53bcf4b1b42ef0f57ca553ab56bdd170e49d8091e96c51c3d69ca696" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/941/c1cfdf4799d62/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:941c1cfdf4799d623cf3aa1d326a6b4fdb7a5799ee2687f3516738216d2262fb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/72a/8d9564a717ee2/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:72a8d9564a717ee291f554eeb4bfeafe2309d5ec0aa6c475170bdab0f9ee8e88" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/511/d15193cbe0136/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:511d15193cbe013619dd05414c35a7dedf2088fcee93c6bbb7c77859765bd4e8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/aea/1f9741b603a8d/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:aea1f9741b603a8d8fedb0ed5502c2bc0accbc51f43e2ad1337fe7259c2b77a5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/401/9a9d473c708cf/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4019a9d473c708cf2f16415688ef0b4639e07abaa569d72f74745bbeffafa2c7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/093/d63b4b0f52d98/rpds_py-0.26.0-pp311-pypy311_pp73-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:093d63b4b0f52d98ebae33b8c50900d3d67e0666094b1be7a12fffd7f65de74b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2ab/e21d8ba64cded/rpds_py-0.26.0-pp311-pypy311_pp73-musllinux_1_2_aarch64.whl", hash = "sha256:2abe21d8ba64cded53a2a677e149ceb76dcf44284202d737178afe7ba540c1eb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4fe/b7511c29f8442/rpds_py-0.26.0-pp311-pypy311_pp73-musllinux_1_2_i686.whl", hash = "sha256:4feb7511c29f8442cbbc28149a92093d32e815a28aa2c50d333826ad2a20fdf0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e99/685fc95d386da/rpds_py-0.26.0-pp311-pypy311_pp73-musllinux_1_2_x86_64.whl", hash = "sha256:e99685fc95d386da368013e7fb4269dd39c30d99f812a8372d62f244f662709c" },
+]
+
+[[package]]
 name = "safetensors"
 version = "0.5.3"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
@@ -884,12 +1476,314 @@ wheels = [
 ]
 
 [[package]]
+name = "scikit-learn"
+version = "1.7.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "joblib" },
+    { name = "numpy" },
+    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version < '3.11'" },
+    { name = "scipy", version = "1.16.1", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "threadpoolctl" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/24b/3f1e976a4665a/scikit_learn-1.7.1.tar.gz", hash = "sha256:24b3f1e976a4665aa74ee0fcaac2b8fccc6ae77c8e07ab25da3ba6d3292b9802" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/406/204dd4004f051/scikit_learn-1.7.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:406204dd4004f0517f0b23cf4b28c6245cbd51ab1b6b78153bc784def214946d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/16a/f2e44164f05d0/scikit_learn-1.7.1-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:16af2e44164f05d04337fd1fc3ae7c4ea61fd9b0d527e22665346336920fe0e1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2f2/e78e56a40c758/scikit_learn-1.7.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:2f2e78e56a40c7587dea9a28dc4a49500fa2ead366869418c66f0fd75b80885c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b62/b76ad408a8214/scikit_learn-1.7.1-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:b62b76ad408a821475b43b7bb90a9b1c9a4d8d125d505c2df0539f06d6e631b1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/996/3b065677a4ce2/scikit_learn-1.7.1-cp310-cp310-win_amd64.whl", hash = "sha256:9963b065677a4ce295e8ccdee80a1dd62b37249e667095039adcd5bce6e90deb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/90c/8494ea23e24c0/scikit_learn-1.7.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:90c8494ea23e24c0fb371afc474618c1019dc152ce4a10e4607e62196113851b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bb8/70c0daf3bf3be/scikit_learn-1.7.1-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:bb870c0daf3bf3be145ec51df8ac84720d9972170786601039f024bf6d61a518" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/40d/accd1b5623f39/scikit_learn-1.7.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:40daccd1b5623f39e8943ab39735cadf0bdce80e67cdca2adcb5426e987320a8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/30d/1f413cfc0aa5a/scikit_learn-1.7.1-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:30d1f413cfc0aa5a99132a554f1d80517563c34a9d3e7c118fde2d273c6fe0f7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c71/1d652829a1805/scikit_learn-1.7.1-cp311-cp311-win_amd64.whl", hash = "sha256:c711d652829a1805a95d7fe96654604a8f16eab5a9e9ad87b3e60173415cb650" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3ce/e419b49b5bbae/scikit_learn-1.7.1-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:3cee419b49b5bbae8796ecd690f97aa412ef1674410c23fc3257c6b8b85b8087" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2fd/8b8d35817b0d9/scikit_learn-1.7.1-cp312-cp312-macosx_12_0_arm64.whl", hash = "sha256:2fd8b8d35817b0d9ebf0b576f7d5ffbbabdb55536b0655a8aaae629d7ffd2e1f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/588/410fa19a96a69/scikit_learn-1.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:588410fa19a96a69763202f1d6b7b91d5d7a5d73be36e189bc6396bfb355bd87" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e31/42f0abe1ad1d1/scikit_learn-1.7.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e3142f0abe1ad1d1c31a2ae987621e41f6b578144a911ff4ac94781a583adad7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3dd/d9092c1bd469a/scikit_learn-1.7.1-cp312-cp312-win_amd64.whl", hash = "sha256:3ddd9092c1bd469acab337d87930067c87eac6bd544f8d5027430983f1e1ae88" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b78/39687fa46d02e/scikit_learn-1.7.1-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:b7839687fa46d02e01035ad775982f2470be2668e13ddd151f0f55a5bf123bae" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a10/f276639195a96/scikit_learn-1.7.1-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:a10f276639195a96c86aa572ee0698ad64ee939a7b042060b98bd1930c261d10" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/136/79981fdaebc10/scikit_learn-1.7.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:13679981fdaebc10cc4c13c43344416a86fcbc61449cb3e6517e1df9d12c8309" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4f1/262883c6a63f0/scikit_learn-1.7.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:4f1262883c6a63f067a980a8cdd2d2e7f2513dddcef6a9eaada6416a7a7cbe43" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ca6/d31fb10e04d50/scikit_learn-1.7.1-cp313-cp313-win_amd64.whl", hash = "sha256:ca6d31fb10e04d50bfd2b50d66744729dbb512d4efd0223b864e2fdbfc4cee11" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/781/674d096303cfe/scikit_learn-1.7.1-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:781674d096303cfe3d351ae6963ff7c958db61cde3421cd490e3a5a58f2a94ae" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/106/79f7f125fe7ec/scikit_learn-1.7.1-cp313-cp313t-macosx_12_0_arm64.whl", hash = "sha256:10679f7f125fe7ecd5fad37dd1aa2daae7e3ad8df7f3eefa08901b8254b3e12c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1f8/12729e38c8cb3/scikit_learn-1.7.1-cp313-cp313t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1f812729e38c8cb37f760dce71a9b83ccfb04f59b3dca7c6079dcdc60544fa9e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/88e/1a20131cf741b/scikit_learn-1.7.1-cp313-cp313t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:88e1a20131cf741b84b89567e1717f27a2ced228e0f29103426102bc2e3b8ef7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b1b/d1d919210b6a1/scikit_learn-1.7.1-cp313-cp313t-win_amd64.whl", hash = "sha256:b1bd1d919210b6a10b7554b717c9000b5485aa95a1d0f177ae0d7ee8ec750da5" },
+]
+
+[[package]]
+name = "scipy"
+version = "1.15.3"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+resolution-markers = [
+    "python_full_version < '3.11'",
+]
+dependencies = [
+    { name = "numpy", marker = "python_full_version < '3.11'" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/eae/3cf522bc7df64/scipy-1.15.3.tar.gz", hash = "sha256:eae3cf522bc7df64b42cad3925c876e1b0b6c35c1337c93e12c0f366f55b0eaf" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a34/5928c86d53506/scipy-1.15.3-cp310-cp310-macosx_10_13_x86_64.whl", hash = "sha256:a345928c86d535060c9c2b25e71e87c39ab2f22fc96e9636bd74d1dbf9de448c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ad3/432cb0f9ed874/scipy-1.15.3-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:ad3432cb0f9ed87477a8d97f03b763fd1d57709f1bbde3c9369b1dff5503b253" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/aef/683a9ae6eb007/scipy-1.15.3-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:aef683a9ae6eb00728a542b796f52a5477b78252edede72b8327a886ab63293f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1c8/32e1bd78dea67/scipy-1.15.3-cp310-cp310-macosx_14_0_x86_64.whl", hash = "sha256:1c832e1bd78dea67d5c16f786681b28dd695a8cb1fb90af2e27580d3d0967e92" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/263/961f658ce2165/scipy-1.15.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:263961f658ce2165bbd7b99fa5135195c3a12d9bef045345016b8b50c315cb82" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9e2/abc762b0811e0/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9e2abc762b0811e09a0d3258abee2d98e0c703eee49464ce0069590846f31d40" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ed7/284b21a7a0c8f/scipy-1.15.3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:ed7284b21a7a0c8f1b6e5977ac05396c0d008b89e05498c8b7e8f4a1423bba0e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/538/0741e53df2c56/scipy-1.15.3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:5380741e53df2c566f4d234b100a484b420af85deb39ea35a1cc1be84ff53a5c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9d6/1e97b186a5735/scipy-1.15.3-cp310-cp310-win_amd64.whl", hash = "sha256:9d61e97b186a57350f6d6fd72640f9e99d5a4a2b8fbf4b9ee9a841eab327dc13" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/993/439ce220d25e3/scipy-1.15.3-cp311-cp311-macosx_10_13_x86_64.whl", hash = "sha256:993439ce220d25e3696d1b23b233dd010169b62f6456488567e830654ee37a6b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/347/16e281f181a02/scipy-1.15.3-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:34716e281f181a02341ddeaad584205bd2fd3c242063bd3423d61ac259ca7eba" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3b0/334816afb8b91/scipy-1.15.3-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:3b0334816afb8b91dab859281b1b9786934392aa3d527cd847e41bb6f45bee65" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6db/907c7368e3092/scipy-1.15.3-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:6db907c7368e3092e24919b5e31c76998b0ce1684d51a90943cb0ed1b4ffd6c1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/721/d6b4ef5dc82ca/scipy-1.15.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:721d6b4ef5dc82ca8968c25b111e307083d7ca9091bc38163fb89243e85e3889" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/39c/b9c62e471b1bb/scipy-1.15.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:39cb9c62e471b1bb3750066ecc3a3f3052b37751c7c3dfd0fd7e48900ed52982" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/795/c46999bae8459/scipy-1.15.3-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:795c46999bae845966368a3c013e0e00947932d68e235702b5c3f6ea799aa8c9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/18a/aacb735ab38b3/scipy-1.15.3-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:18aaacb735ab38b38db42cb01f6b92a2d0d4b6aabefeb07f02849e47f8fb3594" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ae4/8a786a28412d7/scipy-1.15.3-cp311-cp311-win_amd64.whl", hash = "sha256:ae48a786a28412d744c62fd7816a4118ef97e5be0bee968ce8f0a2fba7acf3bb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6ac/6310fdbfb7aa6/scipy-1.15.3-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:6ac6310fdbfb7aa6612408bd2f07295bcbd3fda00d2d702178434751fe48e019" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/185/cd3d6d05ca4b4/scipy-1.15.3-cp312-cp312-macosx_12_0_arm64.whl", hash = "sha256:185cd3d6d05ca4b44a8f1595af87f9c372bb6acf9c808e99aa3e9aa03bd98cf6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/05d/c6abcd105e1a2/scipy-1.15.3-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:05dc6abcd105e1a29f95eada46d4a3f251743cfd7d3ae8ddb4088047f24ea477" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/06e/fcba926324df1/scipy-1.15.3-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:06efcba926324df1696931a57a176c80848ccd67ce6ad020c810736bfd58eb1c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c05/045d8b9bfd807/scipy-1.15.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c05045d8b9bfd807ee1b9f38761993297b10b245f012b11b13b91ba8945f7e45" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/271/e3713e645149e/scipy-1.15.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:271e3713e645149ea5ea3e97b57fdab61ce61333f97cfae392c28ba786f9bb49" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6cf/d56fc1a8e53f6/scipy-1.15.3-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:6cfd56fc1a8e53f6e89ba3a7a7251f7396412d655bca2aa5611c8ec9a6784a1e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0ff/17c0bb1cb3295/scipy-1.15.3-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:0ff17c0bb1cb32952c09217d8d1eed9b53d1463e5f1dd6052c7857f83127d539" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/520/92bc0472cfd17/scipy-1.15.3-cp312-cp312-win_amd64.whl", hash = "sha256:52092bc0472cfd17df49ff17e70624345efece4e1a12b23783a1ac59a1b728ed" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2c6/20736bcc33478/scipy-1.15.3-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:2c620736bcc334782e24d173c0fdbb7590a0a436d2fdf39310a8902505008759" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7e1/1270a00096940/scipy-1.15.3-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:7e11270a000969409d37ed399585ee530b9ef6aa99d50c019de4cb01e8e54e62" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8c9/ed3ba2c8a2ce0/scipy-1.15.3-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:8c9ed3ba2c8a2ce098163a9bdb26f891746d02136995df25227a20e71c396ebb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0bd/d905264c0c9cf/scipy-1.15.3-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:0bdd905264c0c9cfa74a4772cdb2070171790381a5c4d312c973382fc6eaf730" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/791/67bba085c31f3/scipy-1.15.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:79167bba085c31f38603e11a267d862957cbb3ce018d8b38f79ac043bc92d825" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c9d/eabd6d547aee2/scipy-1.15.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c9deabd6d547aee2c9a81dee6cc96c6d7e9a9b1953f74850c179f91fdc729cb7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/dde/4fc32993071ac/scipy-1.15.3-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:dde4fc32993071ac0c7dd2d82569e544f0bdaff66269cb475e0f369adad13f11" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f77/f853d584e72e8/scipy-1.15.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:f77f853d584e72e874d87357ad70f44b437331507d1c311457bed8ed2b956126" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b90/ab29d0c37ec9b/scipy-1.15.3-cp313-cp313-win_amd64.whl", hash = "sha256:b90ab29d0c37ec9bf55424c064312930ca5f4bde15ee8619ee44e69319aab163" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3ac/07623267feb3a/scipy-1.15.3-cp313-cp313t-macosx_10_13_x86_64.whl", hash = "sha256:3ac07623267feb3ae308487c260ac684b32ea35fd81e12845039952f558047b8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/648/7aa99c2a3d509/scipy-1.15.3-cp313-cp313t-macosx_12_0_arm64.whl", hash = "sha256:6487aa99c2a3d509a5227d9a5e889ff05830a06b2ce08ec30df6d79db5fcd5c5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/50f/9e62461c95d93/scipy-1.15.3-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:50f9e62461c95d933d5c5ef4a1f2ebf9a2b4e83b0db374cb3f1de104d935922e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/14e/d70039d182f41/scipy-1.15.3-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:14ed70039d182f411ffc74789a16df3835e05dc469b898233a245cdfd7f162cb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0a7/69105537aa07a/scipy-1.15.3-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0a769105537aa07a69468a0eefcd121be52006db61cdd8cac8a0e68980bbb723" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9db/984639887e3df/scipy-1.15.3-cp313-cp313t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9db984639887e3dffb3928d118145ffe40eff2fa40cb241a306ec57c219ebbbb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/40e/54d5c7e7ebf1a/scipy-1.15.3-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:40e54d5c7e7ebf1aa596c374c49fa3135f04648a0caabcb66c52884b943f02b4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5e7/21fed53187e71/scipy-1.15.3-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:5e721fed53187e71d0ccf382b6bf977644c533e506c4d33c3fb24de89f5c3ed5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/76a/d1fb5f8752eab/scipy-1.15.3-cp313-cp313t-win_amd64.whl", hash = "sha256:76ad1fb5f8752eabf0fa02e4cc0336b4e8f021e2d5f061ed37d6d264db35e3ca" },
+]
+
+[[package]]
+name = "scipy"
+version = "1.16.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+resolution-markers = [
+    "python_full_version >= '3.14'",
+    "python_full_version == '3.13.*'",
+    "python_full_version == '3.12.*'",
+    "python_full_version == '3.11.*'",
+]
+dependencies = [
+    { name = "numpy", marker = "python_full_version >= '3.11'" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/44c/76f9e8b6e8e48/scipy-1.16.1.tar.gz", hash = "sha256:44c76f9e8b6e8e488a586190ab38016e4ed2f8a038af7cd3defa903c0a2238b3" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c03/3fa32bab91dc9/scipy-1.16.1-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:c033fa32bab91dc98ca59d0cf23bb876454e2bb02cbe592d5023138778f70030" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6e5/c2f74e5df3347/scipy-1.16.1-cp311-cp311-macosx_12_0_arm64.whl", hash = "sha256:6e5c2f74e5df33479b5cd4e97a9104c511518fbd979aa9b8f6aec18b2e9ecae7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/0a5/5ffe0ba0f5966/scipy-1.16.1-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:0a55ffe0ba0f59666e90951971a884d1ff6f4ec3275a48f472cfb64175570f77" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f8a/5d6cd147acecc/scipy-1.16.1-cp311-cp311-macosx_14_0_x86_64.whl", hash = "sha256:f8a5d6cd147acecc2603fbd382fed6c46f474cccfcf69ea32582e033fb54dcfe" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cb1/8899127278058/scipy-1.16.1-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:cb18899127278058bcc09e7b9966d41a5a43740b5bb8dcba401bd983f82e885b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/adc/cd93a2fa937a2/scipy-1.16.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:adccd93a2fa937a27aae826d33e3bfa5edf9aa672376a4852d23a7cd67a2e5b7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/18a/ca1646a29ee9a/scipy-1.16.1-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:18aca1646a29ee9a0625a1be5637fa798d4d81fdf426481f06d69af828f16958" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d85/495cef541729a/scipy-1.16.1-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:d85495cef541729a70cdddbbf3e6b903421bc1af3e8e3a9a72a06751f33b7c39" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/226/652fca8530081/scipy-1.16.1-cp311-cp311-win_amd64.whl", hash = "sha256:226652fca853008119c03a8ce71ffe1b3f6d2844cc1686e8f9806edafae68596" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/81b/433bbeaf35728/scipy-1.16.1-cp312-cp312-macosx_10_14_x86_64.whl", hash = "sha256:81b433bbeaf35728dad619afc002db9b189e45eebe2cd676effe1fb93fef2b9c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/886/cc81fdb4c6903/scipy-1.16.1-cp312-cp312-macosx_12_0_arm64.whl", hash = "sha256:886cc81fdb4c6903a3bb0464047c25a6d1016fef77bb97949817d0c0d79f9e04" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/152/40c3aac087a52/scipy-1.16.1-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:15240c3aac087a522b4eaedb09f0ad061753c5eebf1ea430859e5bf8640d5919" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/65f/81a25805f3659/scipy-1.16.1-cp312-cp312-macosx_14_0_x86_64.whl", hash = "sha256:65f81a25805f3659b48126b5053d9e823d3215e4a63730b5e1671852a1705921" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6c6/2eea7f607f122/scipy-1.16.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:6c62eea7f607f122069b9bad3f99489ddca1a5173bef8a0c75555d7488b6f725" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f96/5bbf3235b01c7/scipy-1.16.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f965bbf3235b01c776115ab18f092a95aa74c271a52577bcb0563e85738fd618" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f00/6e323874ffd0b/scipy-1.16.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:f006e323874ffd0b0b816d8c6a8e7f9a73d55ab3b8c3f72b752b226d0e3ac83d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e8f/d15fc5085ab4c/scipy-1.16.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:e8fd15fc5085ab4cca74cb91fe0a4263b1f32e4420761ddae531ad60934c2119" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f7b/8013c6c066609/scipy-1.16.1-cp312-cp312-win_amd64.whl", hash = "sha256:f7b8013c6c066609577d910d1a2a077021727af07b6fab0ee22c2f901f22352a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/545/1606823a5e73d/scipy-1.16.1-cp313-cp313-macosx_10_14_x86_64.whl", hash = "sha256:5451606823a5e73dfa621a89948096c6528e2896e40b39248295d3a0138d594f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/897/28678c5ca5abd/scipy-1.16.1-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:89728678c5ca5abd610aee148c199ac1afb16e19844401ca97d43dc548a354eb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e75/6d688cb03fd07/scipy-1.16.1-cp313-cp313-macosx_14_0_arm64.whl", hash = "sha256:e756d688cb03fd07de0fffad475649b03cb89bee696c98ce508b17c11a03f95c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5aa/2687b9935da3e/scipy-1.16.1-cp313-cp313-macosx_14_0_x86_64.whl", hash = "sha256:5aa2687b9935da3ed89c5dbed5234576589dd28d0bf7cd237501ccfbdf1ad608" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/085/1f6a1e537fe93/scipy-1.16.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:0851f6a1e537fe9399f35986897e395a1aa61c574b178c0d456be5b1a0f5ca1f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fed/c2cbd1baed374/scipy-1.16.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:fedc2cbd1baed37474b1924c331b97bdff611d762c196fac1a9b71e67b813b1b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2ef/500e72f9623a6/scipy-1.16.1-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:2ef500e72f9623a6735769e4b93e9dcb158d40752cdbb077f305487e3e2d1f45" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/978/d8311674b05a8/scipy-1.16.1-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:978d8311674b05a8f7ff2ea6c6bce5d8b45a0cb09d4c5793e0318f448613ea65" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/819/29ed0fa7a5713/scipy-1.16.1-cp313-cp313-win_amd64.whl", hash = "sha256:81929ed0fa7a5713fcdd8b2e6f73697d3b4c4816d090dd34ff937c20fa90e8ab" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bcc/12db731858abd/scipy-1.16.1-cp313-cp313t-macosx_10_14_x86_64.whl", hash = "sha256:bcc12db731858abda693cecdb3bdc9e6d4bd200213f49d224fe22df82687bdd6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/744/d977daa4becb9/scipy-1.16.1-cp313-cp313t-macosx_12_0_arm64.whl", hash = "sha256:744d977daa4becb9fc59135e75c069f8d301a87d64f88f1e602a9ecf51e77b27" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/dc5/4f76ac18073bc/scipy-1.16.1-cp313-cp313t-macosx_14_0_arm64.whl", hash = "sha256:dc54f76ac18073bcecffb98d93f03ed6b81a92ef91b5d3b135dcc81d55a724c7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/367/d567ee9fc1e9e/scipy-1.16.1-cp313-cp313t-macosx_14_0_x86_64.whl", hash = "sha256:367d567ee9fc1e9e2047d31f39d9d6a7a04e0710c86e701e053f237d14a9b4f6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4cf/5785e44e19dcd/scipy-1.16.1-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:4cf5785e44e19dcd32a0e4807555e1e9a9b8d475c6afff3d21c3c543a6aa84f4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3d0/b80fb26d3e13a/scipy-1.16.1-cp313-cp313t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:3d0b80fb26d3e13a794c71d4b837e2a589d839fd574a6bbb4ee1288c213ad4a3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/850/3517c44c18d10/scipy-1.16.1-cp313-cp313t-musllinux_1_2_aarch64.whl", hash = "sha256:8503517c44c18d1030d666cb70aaac1cc8913608816e06742498833b128488b7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/30c/c4bb81c41831e/scipy-1.16.1-cp313-cp313t-musllinux_1_2_x86_64.whl", hash = "sha256:30cc4bb81c41831ecfd6dc450baf48ffd80ef5aed0f5cf3ea775740e80f16ecc" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c24/fa02f7ed23ae5/scipy-1.16.1-cp313-cp313t-win_amd64.whl", hash = "sha256:c24fa02f7ed23ae514460a22c57eca8f530dbfa50b1cfdbf4f37c05b5309cc39" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/796/a5a9ad36fa3a7/scipy-1.16.1-cp314-cp314-macosx_10_14_x86_64.whl", hash = "sha256:796a5a9ad36fa3a782375db8f4241ab02a091308eb079746bc0f874c9b998318" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3ea/0733a2ff73fd6/scipy-1.16.1-cp314-cp314-macosx_12_0_arm64.whl", hash = "sha256:3ea0733a2ff73fd6fdc5fecca54ee9b459f4d74f00b99aced7d9a3adb43fb1cc" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/857/64fb15a2ad994/scipy-1.16.1-cp314-cp314-macosx_14_0_arm64.whl", hash = "sha256:85764fb15a2ad994e708258bb4ed8290d1305c62a4e1ef07c414356a24fcfbf8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ca6/6d980469cb623/scipy-1.16.1-cp314-cp314-macosx_14_0_x86_64.whl", hash = "sha256:ca66d980469cb623b1759bdd6e9fd97d4e33a9fad5b33771ced24d0cb24df67e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e7c/c1ffcc230f568/scipy-1.16.1-cp314-cp314-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:e7cc1ffcc230f568549fc56670bcf3df1884c30bd652c5da8138199c8c76dae0" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/3dd/fb1e8d0b540cb/scipy-1.16.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:3ddfb1e8d0b540cb4ee9c53fc3dea3186f97711248fb94b4142a1b27178d8b4b" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4dc/0e7be79e95d8b/scipy-1.16.1-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:4dc0e7be79e95d8ba3435d193e0d8ce372f47f774cffd882f88ea4e1e1ddc731" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f23/634f9e5adb51b/scipy-1.16.1-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:f23634f9e5adb51b2a77766dac217063e764337fbc816aa8ad9aaebcd4397fd3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/57d/75524cb1c5a37/scipy-1.16.1-cp314-cp314-win_amd64.whl", hash = "sha256:57d75524cb1c5a374958a2eae3d84e1929bb971204cc9d52213fb8589183fc19" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d8d/a7c3dd67bcd93/scipy-1.16.1-cp314-cp314t-macosx_10_14_x86_64.whl", hash = "sha256:d8da7c3dd67bcd93f15618938f43ed0995982eb38973023d46d4646c4283ad65" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cc1/d2f2fd48ba1e0/scipy-1.16.1-cp314-cp314t-macosx_12_0_arm64.whl", hash = "sha256:cc1d2f2fd48ba1e0620554fe5bc44d3e8f5d4185c8c109c7fbdf5af2792cfad2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/21a/611ced9275cb8/scipy-1.16.1-cp314-cp314t-macosx_14_0_arm64.whl", hash = "sha256:21a611ced9275cb861bacadbada0b8c0623bc00b05b09eb97f23b370fc2ae56d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8df/bb25dffc4c3dd/scipy-1.16.1-cp314-cp314t-macosx_14_0_x86_64.whl", hash = "sha256:8dfbb25dffc4c3dd9371d8ab456ca81beeaf6f9e1c2119f179392f0dc1ab7695" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f0e/bb7204f063fad/scipy-1.16.1-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:f0ebb7204f063fad87fc0a0e4ff4a2ff40b2a226e4ba1b7e34bf4b79bf97cd86" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f1b/9e5962656f273/scipy-1.16.1-cp314-cp314t-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f1b9e5962656f2734c2b285a8745358ecb4e4efbadd00208c80a389227ec61ff" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5e1/a106f8c023d57/scipy-1.16.1-cp314-cp314t-musllinux_1_2_aarch64.whl", hash = "sha256:5e1a106f8c023d57a2a903e771228bf5c5b27b5d692088f457acacd3b54511e4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/709/559a1db68a9ab/scipy-1.16.1-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:709559a1db68a9abc3b2c8672c4badf1614f3b440b3ab326d86a5c0491eafae3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c0c/804d60492a0aa/scipy-1.16.1-cp314-cp314t-win_amd64.whl", hash = "sha256:c0c804d60492a0aad7f5b2bb1862f4548b990049e27e828391ff2bf6f7199998" },
+]
+
+[[package]]
+name = "sentencepiece"
+version = "0.2.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a52/c19171daaf2e6/sentencepiece-0.2.0.tar.gz", hash = "sha256:a52c19171daaf2e697dc6cbe67684e0fa341b1248966f6aebb541de654d15843" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/188/779e1298a1c8b/sentencepiece-0.2.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:188779e1298a1c8b8253c7d3ad729cb0a9891e5cef5e5d07ce4592c54869e227" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bed/9cf85b296fa2b/sentencepiece-0.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:bed9cf85b296fa2b76fc2547b9cbb691a523864cebaee86304c43a7b4cb1b452" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d7b/67e724bead13f/sentencepiece-0.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d7b67e724bead13f18db6e1d10b6bbdc454af574d70efbb36f27d90387be1ca3" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2fd/e4b08cfe237be/sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2fde4b08cfe237be4484c6c7c2e2c75fb862cfeab6bd5449ce4caeafd97b767a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4c3/78492056202d1/sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:4c378492056202d1c48a4979650981635fd97875a00eabb1f00c6a236b013b5e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/138/0ce6540a368de/sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1380ce6540a368de2ef6d7e6ba14ba8f3258df650d39ba7d833b79ee68a52040" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a11/51d6a6dd4b43e/sentencepiece-0.2.0-cp310-cp310-win32.whl", hash = "sha256:a1151d6a6dd4b43e552394aed0edfe9292820272f0194bd56c7c1660a0c06c3d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d49/0142b0521ef22/sentencepiece-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:d490142b0521ef22bc1085f061d922a2a6666175bb6b42e588ff95c0db6819b2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/179/82700c4f6dbb5/sentencepiece-0.2.0-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:17982700c4f6dbb55fa3594f3d7e5dd1c8659a274af3738e33c987d2a27c9d5c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7c8/67012c0e8bcd5/sentencepiece-0.2.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:7c867012c0e8bcd5bdad0f791609101cb5c66acb303ab3270218d6debc68a65e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7fd/6071249c74f77/sentencepiece-0.2.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:7fd6071249c74f779c5b27183295b9202f8dedb68034e716784364443879eaa6" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/27f/90c55a65013cb/sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:27f90c55a65013cbb8f4d7aab0599bf925cde4adc67ae43a0d323677b5a1c6cb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b29/3734059ef656d/sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:b293734059ef656dcd65be62ff771507bea8fed0a711b6733976e1ed3add4553" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e58/b47f933aca74c/sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e58b47f933aca74c6a60a79dcb21d5b9e47416256c795c2d58d55cec27f9551d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c58/1258cf346b327/sentencepiece-0.2.0-cp311-cp311-win32.whl", hash = "sha256:c581258cf346b327c62c4f1cebd32691826306f6a41d8c4bec43b010dee08e75" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/099/3dbc665f41130/sentencepiece-0.2.0-cp311-cp311-win_amd64.whl", hash = "sha256:0993dbc665f4113017892f1b87c3904a44d0640eda510abcacdfb07f74286d36" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ea5/f536e32ea8ec9/sentencepiece-0.2.0-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:ea5f536e32ea8ec96086ee00d7a4a131ce583a1b18d130711707c10e69601cb2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d0c/b51f53b6aae3c/sentencepiece-0.2.0-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:d0cb51f53b6aae3c36bafe41e86167c71af8370a039f542c43b0cce5ef24a68c" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/321/2121805afc58d/sentencepiece-0.2.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:3212121805afc58d8b00ab4e7dd1f8f76c203ddb9dc94aa4079618a31cf5da0f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2a3/149e3066c2a75/sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2a3149e3066c2a75e0d68a43eb632d7ae728c7925b517f4c05c40f6f7280ce08" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/632/f3594d3e7ac8b/sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:632f3594d3e7ac8b367bca204cb3fd05a01d5b21455acd097ea4c0e30e2f63d7" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f29/5105c6bdbb05b/sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f295105c6bdbb05bd5e1b0cafbd78ff95036f5d3641e7949455a3f4e5e7c3109" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fb8/9f811e5efd18b/sentencepiece-0.2.0-cp312-cp312-win32.whl", hash = "sha256:fb89f811e5efd18bab141afc3fea3de141c3f69f3fe9e898f710ae7fe3aab251" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/7a6/73a72aab81fef/sentencepiece-0.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:7a673a72aab81fef5ebe755c6e0cc60087d1f3a4700835d40537183c1703a45f" },
+]
+
+[[package]]
+name = "setuptools"
+version = "80.9.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f36/b47402ecde768/setuptools-80.9.0.tar.gz", hash = "sha256:f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/062/d34222ad13e0c/setuptools-80.9.0-py3-none-any.whl", hash = "sha256:062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922" },
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
 sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f43/24edc670a0f49/sniffio-1.3.1.tar.gz", hash = "sha256:f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc" }
 wheels = [
     { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2f6/da418d1f1e0fd/sniffio-1.3.1-py3-none-any.whl", hash = "sha256:2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2" },
+]
+
+[[package]]
+name = "soundfile"
+version = "0.13.1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "cffi" },
+    { name = "numpy" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b2c/68dab1e302973/soundfile-0.13.1.tar.gz", hash = "sha256:b2c68dab1e30297317080a5b43df57e302584c49e2942defdde0acccc53f0e5b" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a23/c717560da2cf4/soundfile-0.13.1-py2.py3-none-any.whl", hash = "sha256:a23c717560da2cf4c7b5ae1142514e0fd82d6bbd9dfc93a50423447142f2c445" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/82d/c664d19831933/soundfile-0.13.1-py2.py3-none-macosx_10_9_x86_64.whl", hash = "sha256:82dc664d19831933fe59adad199bf3945ad06d84bc111a5b4c0d3089a5b9ec33" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/743/f12c12c405492/soundfile-0.13.1-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:743f12c12c4054921e15736c6be09ac26b3b3d603aef6fd69f9dde68748f2593" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/9c9/e855f5a4d06ce/soundfile-0.13.1-py2.py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:9c9e855f5a4d06ce4213f31918653ab7de0c5a8d8107cd2427e44b42df547deb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/032/67c4e49331529/soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:03267c4e493315294834a0870f31dbb3b28a95561b80b134f0bd3cf2d5f0e618" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c73/4564fab7c5ddf/soundfile-0.13.1-py2.py3-none-win32.whl", hash = "sha256:c734564fab7c5ddf8e9be5bf70bab68042cd17e9c214c06e365e20d64f9a69d5" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/1e7/0a05a0626524a/soundfile-0.13.1-py2.py3-none-win_amd64.whl", hash = "sha256:1e70a05a0626524a69e9f0f4dd2ec174b4e9567f4d8b6c11d38b5c289be36ee9" },
+]
+
+[[package]]
+name = "soxr"
+version = "0.5.0.post1"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/709/2b9f3e8a41604/soxr-0.5.0.post1.tar.gz", hash = "sha256:7092b9f3e8a416044e1fa138c8172520757179763b85dc53aa9504f4813cff73" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/740/6d782d85f8cf6/soxr-0.5.0.post1-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:7406d782d85f8cf64e66b65e6b7721973de8a1dc50b9e88bc2288c343a987484" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fa0/a382fb8d8e2af/soxr-0.5.0.post1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:fa0a382fb8d8e2afed2c1642723b2d2d1b9a6728ff89f77f3524034c8885b8c9" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8b0/1d3efb95a2851/soxr-0.5.0.post1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8b01d3efb95a2851f78414bcd00738b0253eec3f5a1e5482838e965ffef84969" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fcc/049b0a151a65a/soxr-0.5.0.post1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fcc049b0a151a65aa75b92f0ac64bb2dba785d16b78c31c2b94e68c141751d6d" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/97f/269bc26937c26/soxr-0.5.0.post1-cp310-cp310-win_amd64.whl", hash = "sha256:97f269bc26937c267a2ace43a77167d0c5c8bba5a2b45863bb6042b5b50c474e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/6fb/77b626773a966/soxr-0.5.0.post1-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:6fb77b626773a966e3d8f6cb24f6f74b5327fa5dc90f1ff492450e9cdc03a378" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/39e/0f791ba178d69/soxr-0.5.0.post1-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:39e0f791ba178d69cd676485dbee37e75a34f20daa478d90341ecb7f6d9d690f" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4f0/b558f445ba4b6/soxr-0.5.0.post1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4f0b558f445ba4b64dbcb37b5f803052eee7d93b1dbbbb97b3ec1787cb5a28eb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/ca6/903671808e0a6/soxr-0.5.0.post1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ca6903671808e0a6078b0d146bb7a2952b118dfba44008b2aa60f221938ba829" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/c4d/8d5283ed6f5ef/soxr-0.5.0.post1-cp311-cp311-win_amd64.whl", hash = "sha256:c4d8d5283ed6f5efead0df2c05ae82c169cfdfcf5a82999c2d629c78b33775e8" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/fef/509466c9c25f6/soxr-0.5.0.post1-cp312-abi3-macosx_10_14_x86_64.whl", hash = "sha256:fef509466c9c25f65eae0ce1e4b9ac9705d22c6038c914160ddaf459589c6e31" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/470/4ba6b13a3f1e4/soxr-0.5.0.post1-cp312-abi3-macosx_11_0_arm64.whl", hash = "sha256:4704ba6b13a3f1e41d12acf192878384c1c31f71ce606829c64abdf64a8d7d32" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bd0/52a66471a7335/soxr-0.5.0.post1-cp312-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:bd052a66471a7335b22a6208601a9d0df7b46b8d087dce4ff6e13eed6a33a2a1" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a3f/16810dd649ab1/soxr-0.5.0.post1-cp312-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a3f16810dd649ab1f433991d2a9661e9e6a116c2b4101039b53b3c3e90a094fc" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b1b/e9fee90afb385/soxr-0.5.0.post1-cp312-abi3-win_amd64.whl", hash = "sha256:b1be9fee90afb38546bdbd7bde714d1d9a8c5a45137f97478a83b65e7f3146f6" },
+]
+
+[[package]]
+name = "standard-aifc"
+version = "3.13.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "audioop-lts", marker = "python_full_version >= '3.13'" },
+    { name = "standard-chunk", marker = "python_full_version >= '3.13'" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/64e/249c7cb4b3daf/standard_aifc-3.13.0.tar.gz", hash = "sha256:64e249c7cb4b3daf2fdba4e95721f811bde8bdfc43ad9f936589b7bb2fae2e43" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f7a/e09cc57de1224/standard_aifc-3.13.0-py3-none-any.whl", hash = "sha256:f7ae09cc57de1224a0dd8e3eb8f73830be7c3d0bc485de4c1f82b4a7f645ac66" },
+]
+
+[[package]]
+name = "standard-chunk"
+version = "3.13.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/4ac/345d37d7e686d/standard_chunk-3.13.0.tar.gz", hash = "sha256:4ac345d37d7e686d2755e01836b8d98eda0d1a3ee90375e597ae43aaf064d654" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/178/80a26c285189c/standard_chunk-3.13.0-py3-none-any.whl", hash = "sha256:17880a26c285189c644bd5bd8f8ed2bdb795d216e3293e6dbe55bbd848e2982c" },
+]
+
+[[package]]
+name = "standard-sunau"
+version = "3.13.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "audioop-lts", marker = "python_full_version >= '3.13'" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b31/9a1ac95a09a23/standard_sunau-3.13.0.tar.gz", hash = "sha256:b319a1ac95a09a2378a8442f403c66f4fd4b36616d6df6ae82b8e536ee790908" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/53a/f624a9529c410/standard_sunau-3.13.0-py3-none-any.whl", hash = "sha256:53af624a9529c41062f4c2fd33837f297f3baa196b0cfceffea6555654602622" },
+]
+
+[[package]]
+name = "sympy"
+version = "1.14.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "mpmath" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d3d/3fe8df1e5a0b4/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e09/1cc3e99d2141a/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5" },
 ]
 
 [[package]]
@@ -906,28 +1800,85 @@ name = "tgbot"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "accelerate" },
     { name = "httpx" },
+    { name = "librosa" },
     { name = "loguru" },
     { name = "minio" },
+    { name = "mistral-common", extra = ["audio"] },
+    { name = "numpy" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
     { name = "python-dotenv" },
     { name = "python-telegram-bot" },
     { name = "tabulate" },
+    { name = "torch" },
+    { name = "torchaudio" },
     { name = "transformers" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "accelerate", specifier = ">=1.9.0" },
     { name = "httpx", specifier = ">=0.25.0" },
+    { name = "librosa", specifier = ">=0.11.0" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "minio", specifier = ">=7.2.0" },
+    { name = "mistral-common", extras = ["audio"], specifier = ">=1.8.2" },
+    { name = "numpy", specifier = "<2" },
     { name = "pydantic", specifier = ">=2.5.0" },
     { name = "pydantic-settings", specifier = ">=2.1.0" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "python-telegram-bot", specifier = ">=22.3" },
     { name = "tabulate", specifier = ">=0.9.0" },
+    { name = "torch", specifier = ">=2.8.0" },
+    { name = "torchaudio", specifier = ">=2.8.0" },
     { name = "transformers", specifier = ">=4.54.1" },
+]
+
+[[package]]
+name = "threadpoolctl"
+version = "3.6.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8ab/8b4aa3491d812/threadpoolctl-3.6.0.tar.gz", hash = "sha256:8ab8b4aa3491d812b623328249fab5302a68d2d71745c8a4c719a2fcaba9f44e" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/43a/0b8fd5a292850/threadpoolctl-3.6.0-py3-none-any.whl", hash = "sha256:43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb" },
+]
+
+[[package]]
+name = "tiktoken"
+version = "0.9.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "regex" },
+    { name = "requests" },
+]
+sdist = { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d02/a5ca6a938e049/tiktoken-0.9.0.tar.gz", hash = "sha256:d02a5ca6a938e0490e1ff957bc48c8b078c88cb83977be1625b1fd8aac792c5d" }
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/586/c16358138b96e/tiktoken-0.9.0-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:586c16358138b96ea804c034b8acf3f5d3f0258bd2bc3b0227af4af5d622e382" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/d9c/59ccc528c6c5d/tiktoken-0.9.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:d9c59ccc528c6c5dd51820b3474402f69d9a9e1d656226848ad68a8d5b2e5108" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f09/68d5beeafbca2/tiktoken-0.9.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f0968d5beeafbca2a72c595e8385a1a1f8af58feaebb02b227229b69ca5357fd" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/92a/5fb085a6a3b73/tiktoken-0.9.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:92a5fb085a6a3b7350b8fc838baf493317ca0e17bd95e8642f95fc69ecfed1de" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/15a/2752dea63d93b/tiktoken-0.9.0-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:15a2752dea63d93b0332fb0ddb05dd909371ededa145fe6a3242f46724fa7990" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/261/13fec3bd7a352/tiktoken-0.9.0-cp310-cp310-win_amd64.whl", hash = "sha256:26113fec3bd7a352e4b33dbaf1bd8948de2507e30bd95a44e2b1156647bc01b4" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/f32/cc56168eac485/tiktoken-0.9.0-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:f32cc56168eac4851109e9b5d327637f15fd662aa30dd79f964b7c39fbadd26e" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/455/56bc41241e529/tiktoken-0.9.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:45556bc41241e5294063508caf901bf92ba52d8ef9222023f83d2483a3055348" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/039/35988a91d6d32/tiktoken-0.9.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:03935988a91d6d3216e2ec7c645afbb3d870b37bcb67ada1943ec48678e7ee33" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/8b3/d80aad8d2c6b9/tiktoken-0.9.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8b3d80aad8d2c6b9238fc1a5524542087c52b860b10cbf952429ffb714bc1136" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/b2a/21133be05dc11/tiktoken-0.9.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:b2a21133be05dc116b1d0372af051cd2c6aa1d2188250c9b553f9fa49301b336" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/11a/20e67fdf58b0e/tiktoken-0.9.0-cp311-cp311-win_amd64.whl", hash = "sha256:11a20e67fdf58b0e2dea7b8654a288e481bb4fc0289d3ad21291f8d0849915fb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/e88/f121c1c22b726/tiktoken-0.9.0-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:e88f121c1c22b726649ce67c089b90ddda8b9662545a8aeb03cfef15967ddd03" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/a66/00660f2f72369/tiktoken-0.9.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:a6600660f2f72369acb13a57fb3e212434ed38b045fd8cc6cdd74947b4b5d210" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/95e/811743b5dfa74/tiktoken-0.9.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:95e811743b5dfa74f4b227927ed86cbc57cad4df859cb3b643be797914e41794" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/993/76e1370d59bcf/tiktoken-0.9.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:99376e1370d59bcf6935c933cb9ba64adc29033b7e73f5f7569f3aad86552b22" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/bad/b947c32739fb6/tiktoken-0.9.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:badb947c32739fb6ddde173e14885fb3de4d32ab9d8c591cbd013c22b4c31dd2" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5a6/2d7a25225bafe/tiktoken-0.9.0-cp312-cp312-win_amd64.whl", hash = "sha256:5a62d7a25225bafed786a524c1b9f0910a1128f4232615bf3f8257a73aaa3b16" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2b0/e8e05a26eda12/tiktoken-0.9.0-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:2b0e8e05a26eda1249e824156d537015480af7ae222ccb798e5234ae0285dbdb" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/27d/457f096f87685/tiktoken-0.9.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:27d457f096f87685195eea0165a1807fae87b97b2161fe8c9b1df5bd74ca6f63" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/2cf/8ded49cddf825/tiktoken-0.9.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2cf8ded49cddf825390e36dd1ad35cd49589e8161fdcb52aa25f0583e90a3e01" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cc1/56cb314119a8b/tiktoken-0.9.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cc156cb314119a8bb9748257a2eaebd5cc0753b6cb491d26694ed42fc7cb3139" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/cd6/9372e8c9dd761/tiktoken-0.9.0-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:cd69372e8c9dd761f0ab873112aba55a0e3e506332dd9f7522ca466e817b1b7a" },
+    { url = "https://pypi.jetson-ai-lab.io/root/pypi/+f/5ea/0edb6f83dc56d/tiktoken-0.9.0-cp313-cp313-win_amd64.whl", hash = "sha256:5ea0edb6f83dc56d794723286215918c1cde03712cbbafa0348b33448faf5b95" },
 ]
 
 [[package]]
@@ -956,6 +1907,35 @@ wheels = [
 ]
 
 [[package]]
+name = "torch"
+version = "2.8.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "filelock" },
+    { name = "fsspec" },
+    { name = "jinja2" },
+    { name = "networkx", version = "3.4.2", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version < '3.11'" },
+    { name = "networkx", version = "3.5", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "setuptools", marker = "python_full_version >= '3.12'" },
+    { name = "sympy" },
+    { name = "typing-extensions" },
+]
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/jp6/cu126/+f/62a/1beee9f2f1470/torch-2.8.0-cp310-cp310-linux_aarch64.whl", hash = "sha256:62a1beee9f2f147076a974d2942c90060c12771c94740830327cae705b2595fc" },
+]
+
+[[package]]
+name = "torchaudio"
+version = "2.8.0"
+source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
+dependencies = [
+    { name = "torch" },
+]
+wheels = [
+    { url = "https://pypi.jetson-ai-lab.io/jp6/cu126/+f/81a/775c8af36ac85/torchaudio-2.8.0-cp310-cp310-linux_aarch64.whl", hash = "sha256:81a775c8af36ac859fb3f4a1b2f662d5fcf284a835b6bb4ed8d0827a6aa9c0b7" },
+]
+
+[[package]]
 name = "tqdm"
 version = "4.67.1"
 source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
@@ -974,8 +1954,7 @@ source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }
 dependencies = [
     { name = "filelock" },
     { name = "huggingface-hub" },
-    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.3.2", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126/+simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "numpy" },
     { name = "packaging" },
     { name = "pyyaml" },
     { name = "regex" },
