@@ -111,10 +111,11 @@ class BotCommandHandler:
 
     async def _create_msg_memoryitem(self, message: Message) -> Optional[MemoryItemRaw]:
         mem_message = message.reply_to_message if message.reply_to_message else message
+        extra_txt = message.text or message.caption or "" if message.reply_to_message else ""
 
         content_type, data_uri = "text", None
         media_obj, media_type, file_name = None, None, None
-        text_content = mem_message.text or mem_message.caption
+        text_content = mem_message.text or mem_message.caption or ""
 
         mapping: List[Tuple[str, str, Callable[[Any], str]]] = [
             ("photo", "image", lambda p: f"photo_{p.file_id}.jpg"),
@@ -145,7 +146,7 @@ class BotCommandHandler:
 
         return MemoryItemRaw(
             content_type=content_type,
-            text_content=text_content,
+            text_content=text_content + extra_txt,
             data_uri=data_uri,
             event_timestamp=mem_message.date,
             meta=self._extract_message_meta(mem_message),
