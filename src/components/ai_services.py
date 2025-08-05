@@ -180,7 +180,7 @@ class AIServices:
                     "prompt_token_ids": prompt_ids,
                 }
                 outputs = self.asr_model.generate(
-                    **inputs,
+                    inputs,
                     sampling_params=sampling_params,
                 )
 
