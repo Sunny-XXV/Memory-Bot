@@ -31,14 +31,15 @@ class BotCommandHandler:
             if not memory_item:
                 await update.message.reply_text(
                     "❌ No content to remember. Either reply to a message or include content in your message.",
-                    parse_mode="Markdown",
+                    parse_mode="MarkdownV2",
                 )
                 return
 
             response = await self._memory_client.ingest(memory_item)
 
             await update.message.reply_text(
-                f"✅ Memory saved:\n📝 Item ID: `{response.item_id}`\n🕒 Status: {response.status}"
+                f"✅ Memory saved:\n📝 Item ID: `{response.item_id}`",
+                parse_mode="MarkdownV2",
             )
 
         except MemoryAPIError as e:
@@ -94,7 +95,7 @@ class BotCommandHandler:
             item = await self._memory_client.get_item(item_id)
 
             formatted_item = self._fmt_memory_item(item)
-            await update.message.reply_text(formatted_item, parse_mode="Markdown")
+            await update.message.reply_text(formatted_item, parse_mode="MarkdownV2")
 
         except ValueError:
             await update.message.reply_text(
@@ -108,6 +109,86 @@ class BotCommandHandler:
             await update.message.reply_text(
                 "❌ An unexpected error occurred while retrieving the item."
             )
+
+    async def handle_mention(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Handle messages where the bot is mentioned."""
+        if not update.message or not update.message.text:
+            return
+
+        try:
+            # Extract the message text without the mention
+            text = update.message.text
+            # Remove bot mention from the text
+            if context.bot.username:
+                mention = f"@{context.bot.username}"
+                text = text.replace(mention, "").strip()
+
+            if not text:
+                text = "Hello! How can I help you?"
+
+            # Generate AI response
+            logger.info(f"Generating response for mention: {text[:100]}...")
+            response = await self._ai_services.generate_chat_response(text)
+
+            # Reply to the original message
+            await update.message.reply_text(response, parse_mode="Markdown")
+
+        except Exception as e:
+            logger.error(f"Error handling mention: {e}")
+            await update.message.reply_text(
+                "Sorry, I encountered an error while processing your message. Please try again."
+            )
+
+    async def handle_voice_message(
+        self, update: Update, context: ContextTypes.DEFAULT_TYPE
+    ) -> None:
+        """Handle voice messages by transcribing them."""
+        if not update.message or not update.message.voice:
+            return
+
+        processing_message = None
+        temp_path = None
+
+        try:
+            processing_message = await update.message.reply_text("🎤 Transcribing voice message...")
+
+            voice_file = await update.message.voice.get_file()
+            with tempfile.NamedTemporaryFile(suffix=".ogg", delete=False) as temp_file:
+                temp_path = temp_file.name
+                await voice_file.download_to_drive(temp_path)
+
+            # Transcribe the audio
+            logger.info("Starting voice transcription...")
+            transcription = await self._ai_services.transcribe_audio(temp_path)
+            transcription = escape_markdown(transcription, version=2)
+            transcription = "\n".join([f">{line}" for line in transcription.split("\n")])
+
+            if transcription:
+                await processing_message.edit_text(
+                    f"🎤 **Voice Transcription:**\n{transcription}", parse_mode="MarkdownV2"
+                )
+            else:
+                await processing_message.edit_text(
+                    "❌ Sorry, I couldn't transcribe your voice message. Please try again."
+                )
+
+        except Exception as e:
+            logger.error(f"Error handling voice message: {e}")
+            error_message = (
+                "❌ Sorry, I encountered an error while transcribing your voice message."
+            )
+
+            if processing_message:
+                try:
+                    await processing_message.edit_text(error_message)
+                except Exception:
+                    await update.message.reply_text(error_message)
+            else:
+                await update.message.reply_text(error_message)
+
+        finally:
+            if temp_path and os.path.exists(temp_path):
+                os.unlink(temp_path)
 
     async def _create_msg_memoryitem(self, message: Message) -> Optional[MemoryItemRaw]:
         mem_message = message.reply_to_message if message.reply_to_message else message
@@ -217,7 +298,7 @@ class BotCommandHandler:
             # content_type = escape_markdown(item.content_type, version=2)
 
             result_text += (
-                f"*{i}\\. \\(Score: {score}\\)*\n{content}\n\n🕒 {timestamp}\n🆔 `{item.id}`\n\n"
+                f"*{i}\\. \\(Score: {score}\\)*\n{content}\n🕒 {timestamp}\n🆔 `{item.id}`\n\n"
                 # f"📂 {content_type}\n\n"
             )
 
@@ -225,9 +306,9 @@ class BotCommandHandler:
 
     def _fmt_memory_item(self, item) -> str:
         """Format a single memory item for display."""
-        content = item.text_content or item.analyzed_text or "[No text content]"
-        timestamp = item.event_timestamp.strftime("%Y-%m-%d %H:%M:%S")
-        created = item.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        content = escape_markdown(item.text_content or item.analyzed_text or "[No text]", version=2)
+        timestamp = escape_markdown(item.event_timestamp.strftime("%Y-%m-%d %H:%M:%S"), version=2)
+        created = escape_markdown(item.created_at.strftime("%Y-%m-%d %H:%M:%S"), version=2)
 
         result = (
             f"📋 **Memory Item Details**\n\n"
@@ -239,13 +320,15 @@ class BotCommandHandler:
         )
 
         if item.meta:
-            result += f"\n🏷️ **Metadata:** `{item.meta}`"
+            meta = escape_markdown(str(item.meta), version=2)
+            result += f"\n🏷️ **Metadata:** `{meta}`"
 
         if item.data_uri:
+            data_uri = escape_markdown(item.data_uri, version=2)
             if self._is_minio_url(item.data_uri):
                 result += "\n🔗 **Stored in MinIO:** Available for download"
             else:
-                result += f"\n🔗 **Data URI:** `{item.data_uri}`"
+                result += f"\n🔗 **Data URI:** `{data_uri}`"
 
         return result
 
@@ -265,90 +348,3 @@ class BotCommandHandler:
 
     def set_bot_instance(self, bot):
         self._bot_instance = bot
-
-    async def handle_mention(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-        """Handle messages where the bot is mentioned."""
-        if not update.message or not update.message.text:
-            return
-
-        try:
-            # Extract the message text without the mention
-            text = update.message.text
-            # Remove bot mention from the text
-            if context.bot.username:
-                mention = f"@{context.bot.username}"
-                text = text.replace(mention, "").strip()
-
-            if not text:
-                text = "Hello! How can I help you?"
-
-            # Generate AI response
-            logger.info(f"Generating response for mention: {text[:100]}...")
-            response = await self._ai_services.generate_chat_response(text)
-
-            # Reply to the original message
-            await update.message.reply_text(response, parse_mode="Markdown")
-
-        except Exception as e:
-            logger.error(f"Error handling mention: {e}")
-            await update.message.reply_text(
-                "Sorry, I encountered an error while processing your message. Please try again."
-            )
-
-    async def handle_voice_message(
-        self, update: Update, context: ContextTypes.DEFAULT_TYPE
-    ) -> None:
-        """Handle voice messages by transcribing them."""
-        if not update.message or not update.message.voice:
-            return
-
-        processing_message = None
-        temp_path = None
-
-        try:
-            # Send initial message to show processing
-            processing_message = await update.message.reply_text(
-                "🎤 Transcribing your voice message..."
-            )
-
-            # Download the voice file
-            voice_file = await update.message.voice.get_file()
-
-            # Create temporary file for the voice message
-            with tempfile.NamedTemporaryFile(suffix=".ogg", delete=False) as temp_file:
-                temp_path = temp_file.name
-                await voice_file.download_to_drive(temp_path)
-
-            # Transcribe the audio
-            logger.info("Starting voice transcription...")
-            transcription = await self._ai_services.transcribe_audio(temp_path)
-
-            if transcription:
-                # Edit the processing message with the transcription
-                await processing_message.edit_text(
-                    f"🎤 **Voice Transcription:**\n\n{transcription}", parse_mode="Markdown"
-                )
-            else:
-                await processing_message.edit_text(
-                    "❌ Sorry, I couldn't transcribe your voice message. Please try again."
-                )
-
-        except Exception as e:
-            logger.error(f"Error handling voice message: {e}")
-            error_message = (
-                "❌ Sorry, I encountered an error while transcribing your voice message."
-            )
-
-            if processing_message:
-                try:
-                    await processing_message.edit_text(error_message)
-                except Exception:
-                    # If editing fails, send a new message
-                    await update.message.reply_text(error_message)
-            else:
-                await update.message.reply_text(error_message)
-
-        finally:
-            # Clean up the temporary file
-            if temp_path and os.path.exists(temp_path):
-                os.unlink(temp_path)
